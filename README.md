@@ -11,5 +11,12 @@ title: out of zeit
 ## Projects
 
 ### [Good Generator](https://ooz.github.io/ggpy/)
-### [Handshake](https://ooz.github.io/handshake/)
 ### [Lifetime Clock](https://ooz.github.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
+
+---
+
+## Global Game Jams
+
+### [home is](https://ooz.github.io/home-is/)
+### [Handshake](https://ooz.github.io/handshake/)
+
