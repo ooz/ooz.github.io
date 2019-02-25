@@ -28,7 +28,7 @@ update:
 install_pipenv:
 	pip3 install pipenv
 
-init: install_pipenv
+init:
 	pipenv --python 3
 	pipenv install
 
