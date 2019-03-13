@@ -4,20 +4,17 @@ title: out of zeit
 
 ## [Blog](https://ooz.github.io/blog/)
 
-### [Gists](https://gist.github.com/ooz)
-
-----
+---
 
 ## Projects
 
 ### [Good Generator](https://ooz.github.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
 ### [Lifetime Clock](https://ooz.github.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
 
----
+[![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
 ## Global Game Jams
 
 ### [home is](https://ooz.github.io/home-is/)
 ### [Handshake](https://ooz.github.io/handshake/)
 
-[![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
