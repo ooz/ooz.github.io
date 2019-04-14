@@ -13,6 +13,8 @@ title: out of zeit
 
 # [![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
+### [Lego Creations](https://ooz.github.io/lego/)
+
 ## Global Game Jams
 
 ### [home is](https://ooz.github.io/home-is/)
