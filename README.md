@@ -10,7 +10,7 @@ title: out of zeit
 
 ### [Good Generator](https://ooz.github.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
 ### [Lifetime Clock](https://ooz.github.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
-### [Lego Creations](https://ooz.github.io/lego/)
+### [Lego Creations](https://github.com/ooz/lego/)
 
 # [![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
