@@ -218,12 +218,13 @@ def make_index(posts):
 
     index_html = \
 f'''<!DOCTYPE html>
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Blog Index | {root_title}</title>
+<title>Index | {root_title}</title>
 <link rel="canonical" href="{base_url}">
 <link rel="shortcut icon" href="{logo_url}">
 
