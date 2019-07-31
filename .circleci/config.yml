@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build-and-deploy:
+    docker:
+      - image: circleci/python:3.6.7
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            make install_pipenv
+            make init
+      - add_ssh_keys:
+          fingerprints:
+            - "ee:c8:1d:d9:f8:89:83:6e:66:b7:a6:68:c0:f6:45:b4"
+      - run:
+          name: Configure git user
+          command: |
+            git config user.email "ooz@users.noreply.github.com"
+            git config user.name "ooz"
+      - run:
+          name: Build and deploy
+          command: |
+            make deploy

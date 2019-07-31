@@ -24,7 +24,7 @@ update:
 	@echo "Run the following command to update:"
 	@echo "wget -q https://raw.githubusercontent.com/ooz/ggpy/master/Makefile -O Makefile"
 
-# Setup / dependencies
+# Setup / dependencies / CI/CD
 install_pipenv:
 	pip3 install pipenv
 
@@ -35,6 +35,10 @@ init:
 test: all
 	pipenv install --dev
 	pipenv run pytest
+
+deploy: all
+	git commit -am "Automatic build by circle-ci `date`" || true
+	git push
 
 # Cleanup
 clean:
