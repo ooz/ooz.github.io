@@ -1,5 +1,5 @@
 ---
-title: out of zeit
+title: out of zeit [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
 ---
 
 ## [Blog](https://ooz.github.io/blog/)
