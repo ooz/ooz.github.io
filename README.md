@@ -2,7 +2,8 @@
 title: out of zeit
 ---
 
-## [Blog](https://ooz.github.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog) and [Website](https://ooz.github.io/) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
+### [Blog](https://ooz.github.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog)
+### [Website](https://ooz.github.io) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
 
 ---
 
