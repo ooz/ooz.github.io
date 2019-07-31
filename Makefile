@@ -37,7 +37,7 @@ test: all
 	pipenv run pytest
 
 deploy: all
-	git commit -am "Build by circle-ci `date` [skip ci]" || true
+	git commit -am "Build by CircleCI `date` [skip ci]" || true
 	git push
 
 # Cleanup
