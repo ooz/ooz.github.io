@@ -9,6 +9,7 @@ title: out of zeit
 
 ## Projects
 
+### [Investment Tracker](https://ooz.github.io/investment-tracker/) [![CircleCI](https://circleci.com/gh/ooz/investment-tracker.svg?style=shield)](https://circleci.com/gh/ooz/investment-tracker)
 ### [Good Generator](https://ooz.github.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
 ### [Lifetime Clock](https://ooz.github.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
 ### [Lego Designs](https://github.com/ooz/lego/)
