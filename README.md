@@ -1,5 +1,5 @@
 ---
-title: out of zeit [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
+title: out of zeit
 ---
 
 ## [Blog](https://ooz.github.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog)
@@ -19,3 +19,7 @@ title: out of zeit [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?st
 
 ### [home is](https://ooz.github.io/home-is/)
 ### [Handshake](https://ooz.github.io/handshake/)
+
+---
+
+[ooz.github.io](https://ooz.github.io/) status: [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
