@@ -4,8 +4,6 @@ title: out of zeit [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?st
 
 ## [Blog](https://ooz.github.io/blog/)
 
-Hey circleci! ;)
-
 ---
 
 ## Projects
