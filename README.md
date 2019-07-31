@@ -19,4 +19,3 @@ title: out of zeit [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?st
 
 ### [home is](https://ooz.github.io/home-is/)
 ### [Handshake](https://ooz.github.io/handshake/)
-
