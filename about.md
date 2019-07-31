@@ -27,7 +27,7 @@ Their respective legal notices apply for those resources:
 * GitHub: [Terms of Service](https://help.github.com/articles/github-terms-of-service/), [Privacy Policy](https://help.github.com/articles/github-privacy-statement/)
 * Cloudflare: [Terms of Service](https://www.cloudflare.com/terms/), [Privacy Policy](https://www.cloudflare.com/security-policy/)
 
-If you want to give feedback or comment on one of my posts, feel free to [open a GitHub issue](https://github.com/ooz/blog/issues), [ping me on Twitter](https://twitter.com/oozgo) or write me an [email](mailto:oliverzeit@gmail.com) (policies of the respective services apply).
+If you want to give feedback or comment on one of my posts, feel free to [open a GitHub issue](https://github.com/ooz/blog/issues), [ping me on Twitter](https://twitter.com/oozgo) or write me an email (see above). Policies of the respective services apply).
 
 ## Disclaimer for External Links
 
@@ -43,7 +43,7 @@ For all content located under (recursively) `./` and `blog/` (EXCEPT `blog/ext_i
 All source code and code snippets from the content under (recursively) `./` and `blog/` (EXCEPT `blog/ext_img/`) are licensed under the MIT License:
 
 ```
-Copyright (c) 2017-2018 ooz, Oliver Zeit
+Copyright (c) 2017-2019 ooz, Oliver Zeit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
