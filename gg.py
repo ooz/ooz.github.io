@@ -28,9 +28,9 @@ def render_template(canonical_url, body, MD, root):
     title = convert_meta(MD, 'title')
     date = convert_meta(MD, 'date')
     tags = convert_meta(MD, 'tags')
-    description = convert_meta(MD, 'description')
-    raw_title = ', '.join(MD.Meta.get('title', ''))
-    raw_description = ', '.join(MD.Meta.get('description', raw_title))
+    description = convert_meta(MD, 'description', default=title)
+    raw_title = ''.join(MD.Meta.get('title', ''))
+    raw_description = ''.join(MD.Meta.get('description', raw_title))
     base_url = gg.config.get('site', {}).get('base_url', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
     style_url = base_url + '/' + gg.config.get('site', {}).get('style', '')
@@ -124,7 +124,7 @@ def json_ld(title, url, description):
     root_title = gg.config.get('site', {}).get('title', '')
     json_escaped_root_title = root_title.replace('"', '\\"')
     json_escaped_title = title.replace('"', '\\"')
-    json_escaped_description = description.replace('"', '\"')
+    json_escaped_description = description.replace('"', '\\"')
     name_block = f',"name":"{json_escaped_root_title}"' if len(root_title) else ''
     return \
 f'''<script type="application/ld+json">
@@ -184,7 +184,7 @@ def convert(directory, filepath, root=False):
 def convert_meta(md, field, default=''):
     field_value = MD.Meta.get(field, '')
     if len(field_value) > 0:
-        return escape(', '.join(field_value))
+        return escape(', '.join(field_value)) if field == 'tags' else escape(''.join(field_value))
     return default
 
 def convert_path(filepath):
