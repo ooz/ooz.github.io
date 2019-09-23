@@ -24,7 +24,13 @@ MD = markdown.Markdown(
         ]
     )
 
-def render_template(title, canonical_url, description, tags, date, body, root=False):
+def render_template(canonical_url, body, MD, root):
+    title = convert_meta(MD, 'title')
+    date = convert_meta(MD, 'date')
+    tags = convert_meta(MD, 'tags')
+    description = convert_meta(MD, 'description')
+    raw_title = ', '.join(MD.Meta.get('title', ''))
+    raw_description = ', '.join(MD.Meta.get('description', raw_title))
     base_url = gg.config.get('site', {}).get('base_url', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
     style_url = base_url + '/' + gg.config.get('site', {}).get('style', '')
@@ -48,7 +54,7 @@ f'''<!DOCTYPE html>
 {meta(author_name, description, tags)}
 {twitter(gg.config.get('social', {}).get('twitter_username', ''))}
 {opengraph(title, canonical_url, description, date)}
-{json_ld(title, canonical_url, description)}
+{json_ld(raw_title, canonical_url, raw_description)}
 </head>
 
 <body class="container">
@@ -116,10 +122,13 @@ f'''<meta property="og:title" content="{title}" />
 
 def json_ld(title, url, description):
     root_title = gg.config.get('site', {}).get('title', '')
-    name_block = f',"name":"{root_title}"' if len(root_title) else ''
+    json_escaped_root_title = root_title.replace('"', '\\"')
+    json_escaped_title = title.replace('"', '\\"')
+    json_escaped_description = description.replace('"', '\"')
+    name_block = f',"name":"{json_escaped_root_title}"' if len(root_title) else ''
     return \
 f'''<script type="application/ld+json">
-{{"@context":"http://schema.org","@type":"WebSite","headline":"{title}","url":"{url}"{name_block},"description":"{description}"}}</script>'''
+{{"@context":"http://schema.org","@type":"WebSite","headline":"{json_escaped_title}","url":"{url}"{name_block},"description":"{json_escaped_description}"}}</script>'''
 
 def post_header(title, date):
     name = gg.config.get('author', {}).get('name', '')
@@ -159,12 +168,9 @@ def convert(directory, filepath, root=False):
             date = convert_meta(MD, 'date')
             tags = convert_meta(MD, 'tags')
             title = convert_meta(MD, 'title')
-            html = render_template(title,
-                canonical_url,
-                convert_meta(MD, 'description', default=title),
-                tags,
-                date,
+            html = render_template(canonical_url,
                 html_post,
+                MD,
                 root
             )
             outfile.write(html)
