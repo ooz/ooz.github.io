@@ -5,6 +5,7 @@ import glob
 from html import escape
 import os
 import sys
+import time
 import markdown
 
 import ggconfig as gg
@@ -178,8 +179,12 @@ def convert(directory, filepath, root=False):
                 'date': date,
                 'url': canonical_url,
                 'title': title,
-                'tags': tags
+                'tags': tags,
+                'last_modified': last_modified(filepath)
             }
+
+def last_modified(filepath):
+    return time.strftime('%Y-%m-%d', time.gmtime(os.path.getmtime(filepath)))
 
 def convert_meta(md, field, default=''):
     field_value = MD.Meta.get(field, '')
@@ -265,11 +270,14 @@ def make_sitemap(posts):
     sitemap_xml.append('<?xml version="1.0" encoding="utf-8" standalone="yes" ?>')
     sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     additional_entries = gg.config.get('site', {}).get('additional_sitemap_entries', [])
-    all_entries = [post['url'] for post in posts] + additional_entries
-    all_entries = sorted(all_entries)
+    all_entries = [(post['url'], post['last_modified']) for post in posts]
+    all_entries = all_entries + [(entry, '') for entry in additional_entries]
+    all_entries = sorted(all_entries, key=lambda entry: entry[0])
     for entry in all_entries:
         sitemap_xml.append('  <url>')
-        sitemap_xml.append('    <loc>%s</loc>' % escape(entry))
+        sitemap_xml.append('    <loc>%s</loc>' % escape(entry[0]))
+        if len(entry[1]):
+            sitemap_xml.append('    <lastmod>%s</lastmod>' % entry[1])
         sitemap_xml.append('  </url>')
     sitemap_xml.append('</urlset>\n')
     sitemap_xml = '\n'.join(sitemap_xml)
