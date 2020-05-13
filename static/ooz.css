@@ -11,13 +11,11 @@ body {
     max-width: 5rem;
 }
 h1 {
-    font-family: sans;
-    font-weight: bold;
     text-align: center;
     width: 100%;
     margin-bottom: 0.8rem;
 }
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: serif;
     font-weight: bold;
 }
