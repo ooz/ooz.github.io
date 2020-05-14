@@ -9,8 +9,6 @@ config = {
         'additional_sitemap_entries': ['https://ooz.github.io/blog/'],
         'title': 'out of zeit',
         'logo': 'static/owl.png',
-        'style': 'static/ooz.css',
-        'external_styles': [],
         'about_url': 'https://ooz.github.io/about.html'
     },
     'author': {

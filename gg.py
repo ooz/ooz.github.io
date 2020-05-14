@@ -34,7 +34,6 @@ def render_template(canonical_url, body, MD, root):
     raw_description = ''.join(MD.Meta.get('description', raw_title))
     base_url = gg.config.get('site', {}).get('base_url', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
-    style_url = base_url + '/' + gg.config.get('site', {}).get('style', '')
     author_name = gg.config.get('author', {}).get('name', '')
     author_url = gg.config.get('author', {}).get('url', '')
     return \
@@ -49,8 +48,69 @@ f'''<!DOCTYPE html>
 <link rel="canonical" href="{canonical_url}">
 <link rel="shortcut icon" href="{logo_url}">
 
-{external_stylesheets_with_highlightjs()}
-<link rel="stylesheet" href="{style_url}">
+<style>
+body {{
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #363636;
+    background: #FFF;
+    margin: 1rem auto;
+    padding: 0 10px;
+    max-width: 700px;
+    scroll-behavior: smooth;
+}}
+a {{ color: #07A; text-decoration: none; }}
+blockquote {{
+    background: #EAEAEA;
+    border-left: .3rem solid #07A;
+    border-radius: .3rem;
+    margin: 0 .2rem;
+    padding: 0 .5rem;
+}}
+code {{
+    font-size: 80%;
+    background: #EAEAEA;
+    padding: .2rem .5rem;
+    white-space: nowrap;
+}}
+h1 {{ text-align: center; margin: 0 auto; }}
+h1, h2, h3, h4, h5, h6 {{ font-family: serif; font-weight: bold; }}
+img {{ max-width: 100%; }}
+ul.task-list, ul.task-list li.task-list-item {{
+    list-style-type: none;
+    list-style-image: none;
+}}
+pre {{ border-left: 0.3rem solid #07A; }}
+pre > code {{
+    font-size: 14px;
+    background: #EAEAEA;
+    box-sizing: inherit;
+    display: block;
+    overflow-x: auto;
+    margin: 0 .2rem;
+    white-space: pre;
+}}
+table {{
+    border-spacing: 0;
+    width: 100%;
+}}
+td, th {{
+    border-bottom: .1rem solid;
+    padding: .8rem 1rem;
+    text-align: left;
+}}
+.avatar {{ border-radius: 50%; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); max-width: 3rem; }}
+.nav {{ float: left; margin-right: 1rem; }}
+.social {{ float: right; margin-left: 1rem; }}
+
+.dark-mode {{ color: #FFF; background: #363636; }}
+.dark-mode a {{ color: #0A7; }}
+.dark-mode blockquote {{ background: #222; border-left: 0.3rem solid #0A7; }}
+.dark-mode code {{ background: #222; }}
+.dark-mode pre {{ border-left: 0.3rem solid #0A7; }}
+</style>
+<script>function toggleTheme() {{ document.body.classList.toggle("dark-mode") }}</script>
 
 {meta(author_name, description, tags)}
 {twitter(gg.config.get('social', {}).get('twitter_username', ''))}
@@ -58,20 +118,18 @@ f'''<!DOCTYPE html>
 {json_ld(raw_title, canonical_url, raw_description)}
 </head>
 
-<body class="container">
+<body>
 <div style="text-align:center">
 <a href="{author_url}"><img src="{logo_url}" class="avatar" /></a>
 </div>
 {post_header(title, date)}
-<div style="padding-top:2.5rem;">
+<div>
 {body}
 </div>
 <div>
-{'' if root else render_footer_navigation(base_url)}
+{render_footer_navigation(base_url, root)}
 {render_about_and_social_icons()}
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
 '''
@@ -84,18 +142,23 @@ def render_about_and_social_icons():
     icons = []
 
     if len(email):
-        icons.append('<a href="mailto:%s" class="social-icon">email</a>' % email)
+        icons.append('<a href="mailto:%s" class="social">email</a>' % email)
     if len(twitter):
-        icons.append('<a href="%s" class="social-icon">twitter</a>' % twitter)
+        icons.append('<a href="%s" class="social">twitter</a>' % twitter)
     if len(github):
-        icons.append('<a href="%s" class="social-icon">github</a>' % github)
+        icons.append('<a href="%s" class="social">github</a>' % github)
     if len(about):
-        icons.append('<a href="%s" class="social-icon">about</a>' % about)
+        icons.append('<a href="%s" class="social">about</a>' % about)
     return '\n'.join(icons)
 
-def render_footer_navigation(root_url):
-    return f'''<a href="{root_url}" class="nav-arrow">back</a>
-<a href="#" class="nav-arrow">top</a>'''
+def render_footer_navigation(root_url, is_root):
+    nav = []
+    if not is_root:
+        nav.append(f'''<a href="{root_url}" class="nav">back</a>''')
+    nav.append('''<a href="#" class="nav">top</a>''')
+    nav.append('''<a href="javascript:toggleTheme()" class="nav">🌚🌞</a>''')
+    return '\n'.join(nav)
+
 
 def meta(author, description, tags):
     return \
@@ -141,23 +204,10 @@ def post_header(title, date):
             maybe_linked_author = f'<a href="{author_url}">{name}</a>'
         name_and_date = f'{maybe_linked_author}, {name_and_date}'
     return \
-f'''<div>
+f'''<div style="text-align:right;">
 {MD.reset().convert('# ' + title)}
-<small style="float:right;">{name_and_date}</small>
+<small>{name_and_date}</small>
 </div>'''
-
-def external_stylesheets():
-    external_styles = gg.config.get('site', {}).get('external_styles', [])
-    if not external_styles:
-        external_styles = [
-            'https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css',
-            'https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css' # mini.css is also nice!
-        ]
-    return '\n'.join([f'<link rel="stylesheet" href="{style}">' for style in external_styles])
-
-def external_stylesheets_with_highlightjs():
-    return external_stylesheets() + '''
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">'''
 
 def convert(directory, filepath, root=False):
     with open(filepath, 'r') as infile:
@@ -216,7 +266,6 @@ def make_index(posts):
     base_url = gg.config.get('site', {}).get('base_url', '')
     root_title = gg.config.get('site', {}).get('title', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
-    style_url = base_url + '/' + gg.config.get('site', {}).get('style', '')
     author_url = gg.config.get('author', {}).get('url', '')
     posts_html = []
     for post in reversed(sorted(posts, key=lambda post: post['date'])):
@@ -239,8 +288,6 @@ f'''<!DOCTYPE html>
 <link rel="canonical" href="{base_url}">
 <link rel="shortcut icon" href="{logo_url}">
 
-{external_stylesheets()}
-<link rel="stylesheet" href="{style_url}">
 </head>
 
 <body class="container">
