@@ -9,10 +9,69 @@
 <link rel="canonical" href="https://ooz.github.io/">
 <link rel="shortcut icon" href="https://ooz.github.io/static/owl.png">
 
-<link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-<link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-<link rel="stylesheet" href="https://ooz.github.io/static/ooz.css">
+<style>
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #363636;
+    background: #FFF;
+    margin: 1rem auto;
+    padding: 0 10px;
+    max-width: 700px;
+    scroll-behavior: smooth;
+}
+a { color: #07A; text-decoration: none; }
+blockquote {
+    background: #EAEAEA;
+    border-left: .3rem solid #07A;
+    border-radius: .3rem;
+    margin: 0 .2rem;
+    padding: 0 .5rem;
+}
+code {
+    font-size: 80%;
+    background: #EAEAEA;
+    padding: .2rem .5rem;
+    white-space: nowrap;
+}
+h1 { text-align: center; margin: 0 auto; }
+h1, h2, h3, h4, h5, h6 { font-family: serif; font-weight: bold; }
+img { max-width: 100%; }
+ul.task-list, ul.task-list li.task-list-item {
+    list-style-type: none;
+    list-style-image: none;
+}
+pre { border-left: 0.3rem solid #07A; }
+pre > code {
+    font-size: 14px;
+    background: #EAEAEA;
+    box-sizing: inherit;
+    display: block;
+    overflow-x: auto;
+    margin: 0 .2rem;
+    white-space: pre;
+}
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+td, th {
+    border-bottom: .1rem solid;
+    padding: .8rem 1rem;
+    text-align: left;
+}
+.avatar { border-radius: 50%; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); max-width: 3rem; }
+.nav { float: left; margin-right: 1rem; }
+.social { float: right; margin-left: 1rem; }
+
+.dark-mode { color: #FFF; background: #363636; }
+.dark-mode a { color: #0A7; }
+.dark-mode blockquote { background: #222; border-left: 0.3rem solid #0A7; }
+.dark-mode code { background: #222; }
+.dark-mode pre { border-left: 0.3rem solid #0A7; }
+</style>
+<script>function toggleTheme() { document.body.classList.toggle("dark-mode") }</script>
 
 <meta name="author" content="ooz" />
 <meta name="description" content="out of zeit" />
@@ -31,15 +90,15 @@
 {"@context":"http://schema.org","@type":"WebSite","headline":"out of zeit","url":"https://ooz.github.io/","name":"out of zeit","description":"out of zeit"}</script>
 </head>
 
-<body class="container">
+<body>
 <div style="text-align:center">
 <a href="https://ooz.github.io"><img src="https://ooz.github.io/static/owl.png" class="avatar" /></a>
 </div>
-<div>
+<div style="text-align:right;">
 <h1 id="out-of-zeit">out of zeit</h1>
-<small style="float:right;"></small>
+<small></small>
 </div>
-<div style="padding-top:2.5rem;">
+<div>
 <p><a href="https://ooz.github.io/blog/">Blog</a> <a href="https://circleci.com/gh/ooz/blog"><img alt="CircleCI" src="https://circleci.com/gh/ooz/blog.svg?style=shield" /></a></p>
 <p><a href="https://ooz.github.io">Website</a> <a href="https://circleci.com/gh/ooz/ooz.github.io"><img alt="CircleCI" src="https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield" /></a></p>
 <h2 id="projects">Projects</h2>
@@ -54,12 +113,11 @@
 <p><a href="https://ooz.github.io/handshake/">Handshake</a></p>
 </div>
 <div>
-
-<a href="https://twitter.com/oozgo" class="social-icon">twitter</a>
-<a href="https://github.com/ooz" class="social-icon">github</a>
-<a href="https://ooz.github.io/about.html" class="social-icon">about</a>
+<a href="#" class="nav">top</a>
+<a href="javascript:toggleTheme()" class="nav">🌚🌞</a>
+<a href="https://twitter.com/oozgo" class="social">twitter</a>
+<a href="https://github.com/ooz" class="social">github</a>
+<a href="https://ooz.github.io/about.html" class="social">about</a>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
