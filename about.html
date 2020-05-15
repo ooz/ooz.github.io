@@ -71,7 +71,10 @@ td, th {
 .dark-mode code { background: #222; }
 .dark-mode pre { border-left: 0.3rem solid #0A7; }
 </style>
-<script>function toggleTheme() { document.body.classList.toggle("dark-mode") }</script>
+<script>
+function toggleTheme() { document.body.classList.toggle("dark-mode") }
+function initTheme() { let h=new Date().getHours(); if (h <= 8 || h >= 20) { toggleTheme() } }
+</script>
 
 <meta name="author" content="ooz" />
 <meta name="description" content="About" />
@@ -90,7 +93,7 @@ td, th {
 {"@context":"http://schema.org","@type":"WebSite","headline":"About","url":"https://ooz.github.io/about.html","name":"out of zeit","description":"About"}</script>
 </head>
 
-<body>
+<body onload="initTheme()">
 <div style="text-align:center">
 <a href="https://ooz.github.io"><img src="https://ooz.github.io/static/owl.png" class="avatar" /></a>
 </div>
