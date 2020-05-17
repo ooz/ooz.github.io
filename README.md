@@ -28,5 +28,3 @@ title: out of zeit
 
 [Handshake](https://ooz.github.io/handshake/)
 
----
-
