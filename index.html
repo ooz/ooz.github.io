@@ -37,6 +37,7 @@ code {
 }
 h1 { text-align: center; margin: 0 auto; }
 h1, h2, h3, h4, h5, h6 { font-family: serif; font-weight: bold; }
+header { text-align:center; }
 img { max-width: 100%; }
 ul.task-list, ul.task-list li.task-list-item {
     list-style-type: none;
@@ -94,14 +95,14 @@ function initTheme() { let h=new Date().getHours(); if (h <= 8 || h >= 20) { tog
 </head>
 
 <body onload="initTheme()">
-<div style="text-align:center">
+<header>
 <a href="https://ooz.github.io"><img src="https://ooz.github.io/static/owl.png" class="avatar" /></a>
-</div>
 <div style="text-align:right;">
 <h1 id="out-of-zeit">out of zeit</h1>
-<small></small>
+
 </div>
-<div>
+</header>
+<section>
 <p><a href="https://ooz.github.io/blog/">Blog</a> <a href="https://circleci.com/gh/ooz/blog"><img alt="CircleCI" src="https://circleci.com/gh/ooz/blog.svg?style=shield" /></a></p>
 <p><a href="https://ooz.github.io">Website</a> <a href="https://circleci.com/gh/ooz/ooz.github.io"><img alt="CircleCI" src="https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield" /></a></p>
 <h2 id="projects">Projects</h2>
@@ -115,13 +116,13 @@ function initTheme() { let h=new Date().getHours(); if (h <= 8 || h >= 20) { tog
 <p><a href="https://ooz.github.io/home-is/">home is</a></p>
 <p><a href="https://ooz.github.io/handshake/">Handshake</a></p>
 <hr />
-</div>
-<div>
+</section>
+<footer>
 <a href="#" class="nav">top</a>
 <a href="javascript:toggleTheme()" class="nav">🌚🌞</a>
 <a href="https://twitter.com/oozgo" class="social">twitter</a>
 <a href="https://github.com/ooz" class="social">github</a>
 <a href="https://ooz.github.io/about.html" class="social">about</a>
-</div>
+</footer>
 </body>
 </html>
