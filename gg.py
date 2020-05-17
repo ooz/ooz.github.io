@@ -99,6 +99,7 @@ code {{
     padding: .2rem .5rem;
     white-space: nowrap;
 }}
+footer {{ margin-top: 1rem; }}
 h1 {{ text-align: center; margin: 0 auto; }}
 h1, h2, h3, h4, h5, h6 {{ font-family: serif; font-weight: bold; }}
 header {{ text-align:center; }}
