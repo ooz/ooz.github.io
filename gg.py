@@ -56,17 +56,17 @@ f'''<!DOCTYPE html>
 </head>
 
 <body onload="initTheme()">
-<div style="text-align:center">
+<header>
 <a href="{author_url}"><img src="{logo_url}" class="avatar" /></a>
-</div>
 {post_header(title, date)}
-<div>
+</header>
+<section>
 {body}
-</div>
-<div>
+</section>
+<footer>
 {render_footer_navigation(base_url, root)}
 {render_about_and_social_icons()}
-</div>
+</footer>
 </body>
 </html>
 '''
@@ -101,6 +101,7 @@ code {{
 }}
 h1 {{ text-align: center; margin: 0 auto; }}
 h1, h2, h3, h4, h5, h6 {{ font-family: serif; font-weight: bold; }}
+header {{ text-align:center; }}
 img {{ max-width: 100%; }}
 ul.task-list, ul.task-list li.task-list-item {{
     list-style-type: none;
@@ -210,11 +211,19 @@ def post_header(title, date):
         if len(author_url):
             maybe_linked_author = f'<a href="{author_url}">{name}</a>'
         name_and_date = f'{maybe_linked_author}, {name_and_date}'
-    return \
-f'''<div style="text-align:right;">
-{MD.reset().convert('# ' + title)}
-<small>{name_and_date}</small>
+    if len(name_and_date):
+        name_and_date = f'''<small>{name_and_date}</small>'''
+    title_html = ''
+    if len(title):
+        title_html = MD.reset().convert('# ' + title)
+    header = ''
+    if len(title_html) or len(name_and_date):
+        header = f'''<div style="text-align:right;">
+{title_html}
+{name_and_date}
 </div>'''
+    return header
+
 
 def convert(directory, filepath, root=False):
     with open(filepath, 'r') as infile:
