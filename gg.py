@@ -308,19 +308,19 @@ f'''<!DOCTYPE html>
 </head>
 
 <body onload="initTheme()">
-<div style="text-align:center">
+<header>
 <a href="{author_url}"><img src="{logo_url}" class="avatar" /></a>
-</div>
 <h1>Index</h1>
-<div>
+</header>
+<section>
 <table><tbody>
 {posts_html}
 </tbody></table>
-</div>
-<div>
+</section>
+<footer>
 {render_footer_navigation(None, True)}
 {render_about_and_social_icons()}
-</div>
+</footer>
 </body>
 </html>
 '''
