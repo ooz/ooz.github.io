@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import git
 import glob
 from html import escape
 import os
@@ -10,7 +11,8 @@ import markdown
 
 import ggconfig as gg
 
-MD = markdown.Markdown(
+def configure_markdown():
+    return markdown.Markdown(
         extensions = [
             'extra',
             'meta',
@@ -25,13 +27,13 @@ MD = markdown.Markdown(
         ]
     )
 
-def render_template(canonical_url, body, MD, root):
-    title = convert_meta(MD, 'title')
-    date = convert_meta(MD, 'date')
-    tags = convert_meta(MD, 'tags')
-    description = convert_meta(MD, 'description', default=title)
-    raw_title = ''.join(MD.Meta.get('title', ''))
-    raw_description = ''.join(MD.Meta.get('description', raw_title))
+def post_template(canonical_url, body, md, root):
+    title = convert_meta(md, 'title')
+    date = convert_meta(md, 'date')
+    tags = convert_meta(md, 'tags')
+    description = convert_meta(md, 'description', default=title)
+    raw_title = ''.join(md.Meta.get('title', ''))
+    raw_description = ''.join(md.Meta.get('description', raw_title))
     base_url = gg.config.get('site', {}).get('base_url', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
     author_name = gg.config.get('author', {}).get('name', '')
@@ -44,7 +46,7 @@ f'''<!DOCTYPE html>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>{convert_title2pagetitle(title)}</title>
+<title>{pagetitle(title)}</title>
 <link rel="canonical" href="{canonical_url}">
 <link rel="shortcut icon" href="{logo_url}">
 
@@ -58,14 +60,14 @@ f'''<!DOCTYPE html>
 <body onload="initTheme()">
 <header>
 <a href="{author_url}"><img src="{logo_url}" class="avatar" /></a>
-{post_header(title, date)}
+{post_header(md.reset().convert('# ' + title) if len(title) else '', date)}
 </header>
 <section>
 {body}
 </section>
 <footer>
-{render_footer_navigation(base_url, root)}
-{render_about_and_social_icons()}
+{footer_navigation(base_url, root)}
+{about_and_social_icons()}
 </footer>
 </body>
 </html>
@@ -143,10 +145,10 @@ function initTheme() {{ let h=new Date().getHours(); if (h <= 8 || h >= 20) {{ t
 </script>
 '''
 
-def render_about_and_social_icons():
+def about_and_social_icons():
     github = gg.config.get('social', {}).get('github_url', '')
     twitter = gg.config.get('social', {}).get('twitter_url', '')
-    email = gg.config.get('author', {}).get('email', '')
+    email = gg.config.get('social', {}).get('email', gg.config.get('author', {}).get('email', ''))
     about = gg.config.get('site', {}).get('about_url', '')
     icons = []
 
@@ -160,7 +162,7 @@ def render_about_and_social_icons():
         icons.append('<a href="%s" class="social">about</a>' % about)
     return '\n'.join(icons)
 
-def render_footer_navigation(root_url, is_root):
+def footer_navigation(root_url, is_root):
     nav = []
     if not is_root:
         nav.append(f'''<a href="{root_url}" class="nav">back</a>''')
@@ -203,7 +205,7 @@ def json_ld(title, url, description):
 f'''<script type="application/ld+json">
 {{"@context":"http://schema.org","@type":"WebSite","headline":"{json_escaped_title}","url":"{url}"{name_block},"description":"{json_escaped_description}"}}</script>'''
 
-def post_header(title, date):
+def post_header(title_html, date):
     name = gg.config.get('author', {}).get('name', '')
     author_url = gg.config.get('author', {}).get('url', '')
     name_and_date = date[:10]
@@ -214,9 +216,6 @@ def post_header(title, date):
         name_and_date = f'{maybe_linked_author}, {name_and_date}'
     if len(name_and_date):
         name_and_date = f'''<small>{name_and_date}</small>'''
-    title_html = ''
-    if len(title):
-        title_html = MD.reset().convert('# ' + title)
     header = ''
     if len(title_html) or len(name_and_date):
         header = f'''<div style="text-align:right;">
@@ -226,35 +225,39 @@ def post_header(title, date):
     return header
 
 
-def convert(directory, filepath, root=False):
+def read_post(directory, filepath, root=False):
+    MD = configure_markdown()
     with open(filepath, 'r') as infile:
         markdown_post = infile.read()
         html_post = MD.reset().convert(markdown_post)
         targetpath = convert_path(filepath)
-        with open(targetpath, 'w') as outfile:
-            canonical_url = convert_canonical(directory, targetpath)
-            date = convert_meta(MD, 'date')
-            tags = convert_meta(MD, 'tags')
-            title = convert_meta(MD, 'title')
-            html = render_template(canonical_url,
-                html_post,
-                MD,
-                root
-            )
-            outfile.write(html)
-            return {
-                'date': date,
-                'url': canonical_url,
-                'title': title,
-                'tags': tags,
-                'last_modified': last_modified(filepath)
-            }
+        canonical_url = convert_canonical(directory, targetpath)
+        date = convert_meta(MD, 'date')
+        tags = convert_meta(MD, 'tags')
+        title = convert_meta(MD, 'title')
+        html = post_template(canonical_url,
+            html_post,
+            MD,
+            root
+        )
+        return {
+            'filepath': targetpath,
+            'html': html,
+            'date': date,
+            'url': canonical_url,
+            'title': title,
+            'tags': tags,
+            'last_modified': last_modified(filepath)
+        }
 
 def last_modified(filepath):
-    return time.strftime('%Y-%m-%d', time.gmtime(os.path.getmtime(filepath)))
+    repo = git.Repo()
+    for commit in repo.iter_commits(paths=filepath, max_count=1):
+        return time.strftime('%Y-%m-%d', time.gmtime(commit.authored_date))
+    return ''
 
 def convert_meta(md, field, default=''):
-    field_value = MD.Meta.get(field, '')
+    field_value = md.Meta.get(field, '')
     if len(field_value) > 0:
         return escape(', '.join(field_value)) if field == 'tags' else escape(''.join(field_value))
     return default
@@ -273,13 +276,13 @@ def convert_canonical(directory, targetpath):
         return f'{base_url}/{targetpath[:-10]}'
     return f'{base_url}/{targetpath}'
 
-def convert_title2pagetitle(title):
+def pagetitle(title):
     root_title = gg.config.get('site', {}).get('title', '')
     if len(title) and title != root_title:
         return f'{title} | {root_title}'
     return root_title
 
-def make_index(posts):
+def index(posts):
     base_url = gg.config.get('site', {}).get('base_url', '')
     root_title = gg.config.get('site', {}).get('title', '')
     logo_url = base_url + '/' + gg.config.get('site', {}).get('logo', '')
@@ -293,7 +296,7 @@ def make_index(posts):
             posts_html.append('<tr><td>%s</td><td><a href="%s">%s</a></td></tr>' % (day, url, title))
     posts_html = "\n".join(posts_html)
 
-    index_html = \
+    return \
 f'''<!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -319,19 +322,17 @@ f'''<!DOCTYPE html>
 </tbody></table>
 </section>
 <footer>
-{render_footer_navigation(None, True)}
-{render_about_and_social_icons()}
+{footer_navigation(None, True)}
+{about_and_social_icons()}
 </footer>
 </body>
 </html>
 '''
-    with open('index.html', 'w') as index_file:
-        index_file.write(index_html)
 
 def is_root_readme(path):
     return os.path.relpath(path) == 'README.md'
 
-def make_sitemap(posts):
+def sitemap(posts):
     sitemap_xml = []
     sitemap_xml.append('<?xml version="1.0" encoding="utf-8" standalone="yes" ?>')
     sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
@@ -346,9 +347,11 @@ def make_sitemap(posts):
             sitemap_xml.append('    <lastmod>%s</lastmod>' % entry[1])
         sitemap_xml.append('  </url>')
     sitemap_xml.append('</urlset>\n')
-    sitemap_xml = '\n'.join(sitemap_xml)
-    with open('sitemap.xml', 'w') as sitemap_file:
-        sitemap_file.write(sitemap_xml)
+    return '\n'.join(sitemap_xml)
+
+def write_file(filepath, content=''):
+    with open(filepath, 'w') as f:
+        f.write(content)
 
 def main(directories):
     render_root_readme = gg.config.get('site', {}).get('render_root_readme', True)
@@ -358,15 +361,17 @@ def main(directories):
         for path in paths:
             root_readme = is_root_readme(path)
             if not root_readme or render_root_readme:
-                posts.append(convert(directory, path, root=root_readme))
+                post = read_post(directory, path, root=root_readme)
+                write_file(post['filepath'], post['html'])
+                posts.append(post)
 
     posts = [post for post in posts if 'draft' not in post['tags']]
     if not render_root_readme:
-        make_index(posts)
+        write_file('index.html', index(posts))
 
     generate_sitemap = gg.config.get('site', {}).get('generate_sitemap', False)
     if generate_sitemap:
-        make_sitemap(posts)
+        write_file('sitemap.xml', sitemap(posts))
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover because main wrapper
     main(sys.argv[1:])

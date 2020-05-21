@@ -8,7 +8,9 @@ python_version = "3"
 
 [dev-packages]
 pytest = "*"
+coverage = "*"
 
 [packages]
 markdown = "*"
 pymdown-extensions = "*"
+gitpython = "*"
