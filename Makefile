@@ -10,7 +10,7 @@ realfire: all
 	git push -f origin master
 
 newpost:
-	bash newpost.sh
+	pipenv run python gg.py --newpost
 
 openlatest:
 	@ls -1t `find . -type f -name '*.md'` | head -n 1 | xargs -o vim
@@ -18,7 +18,6 @@ openlatest:
 update:
 	wget -q https://raw.githubusercontent.com/ooz/ggpy/master/gg.py -O gg.py
 	wget -q https://raw.githubusercontent.com/ooz/ggpy/master/Pipfile -O Pipfile
-	wget -q https://raw.githubusercontent.com/ooz/ggpy/master/newpost.sh -O newpost.sh
 	@echo "Unfortunately the Makefile cannot be updated automatically!"
 	@echo "Run the following command to update:"
 	@echo "wget -q https://raw.githubusercontent.com/ooz/ggpy/master/Makefile -O Makefile"
