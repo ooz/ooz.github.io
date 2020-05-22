@@ -371,7 +371,7 @@ def write_file(filepath, content=''):
 def create_newpost(title):
     write_file(kebab_case(title) + '.md', newpost(title))
 
-def main(directories):
+def generate(directories):
     render_root_readme = gg.config.get('site', {}).get('render_root_readme', True)
     posts = []
     for directory in directories:
@@ -403,4 +403,4 @@ if __name__ == '__main__': # pragma: no cover because main wrapper
     if args.get('newpost', None):
         create_newpost(args.get('newpost'))
     if len(args.get('directories')):
-        main(args.get('directories'))
+        generate(args.get('directories'))
