@@ -129,6 +129,7 @@ td, th {{
     border-bottom: .1rem solid;
     padding: .8rem 1rem;
     text-align: left;
+    vertical-align: top;
 }}
 .avatar {{ border-radius: 50%; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); max-width: 3rem; }}
 .nav {{ float: left; margin-right: 1rem; }}
