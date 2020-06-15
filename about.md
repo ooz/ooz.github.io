@@ -20,14 +20,13 @@ oli ver ze it at gmail dot com
 This is a personal website and blog, that you can use without the need to provide personal data.
 This website does not set any cookies and does not track your browsing activity.
 You cannot comment on anything or signup for a newsletter.
-This website is statically hosted on GitHub Pages and includes stylesheets hosted by Cloudflare.
-These companies might keep various logs on their servers to provide this service.
-Their respective legal notices apply for those resources:
+This website is statically hosted on GitHub Pages.
+That company might keep various logs on its servers to provide this service.
+The respective legal notices apply:
 
 * GitHub: [Terms of Service](https://help.github.com/articles/github-terms-of-service/), [Privacy Policy](https://help.github.com/articles/github-privacy-statement/)
-* Cloudflare: [Terms of Service](https://www.cloudflare.com/terms/), [Privacy Policy](https://www.cloudflare.com/security-policy/)
 
-If you want to give feedback or comment on one of my posts, feel free to [open a GitHub issue](https://github.com/ooz/blog/issues), [ping me on Twitter](https://twitter.com/oozgo) or write me an email (see above). Policies of the respective services apply).
+If you want to give feedback or comment on one of my posts, feel free to [open a GitHub issue](https://github.com/ooz/blog/issues), [ping me on Twitter](https://twitter.com/oozgo) or write me an email (see above). Policies of the respective services apply.
 
 ## Disclaimer for External Links
 
