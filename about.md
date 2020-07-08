@@ -3,7 +3,7 @@ title: About
 ---
 
 Hey! I am Oliver, a Software Engineer at [ePages](https://www.epages.com/).
-When not sitting infront of my computer I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.), messing around with Lego bricks and playing the <del>guitar</del> ukulele.
+When not sitting infront of a computer I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.), messing around with Lego bricks and playing the <del>guitar</del> ukulele.
 
 ## Imprint
 
