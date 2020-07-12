@@ -9,7 +9,7 @@ When not sitting infront of computers I like doing various sports (Shotokan Kara
 
 It's a modified version of the [German Naturschutzgebiet (nature reserve) sign](https://en.wikipedia.org/wiki/Naturschutzgebiet).
 Since the original image is in the public domain,
-I could crop it to look like a selfie and added the letter `z` in succession of the `oo` owl eyes to match my GitHub handle [`ooz`](https://github.com/ooz).
+I could crop it to look like a selfie and add the letter `z` in succession of the `oo` owl eyes to match my GitHub handle [`ooz`](https://github.com/ooz).
 
 ## Imprint
 
