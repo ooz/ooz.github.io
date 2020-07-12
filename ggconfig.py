@@ -12,7 +12,7 @@ config = {
         'about_url': 'https://oliz.io/about.html'
     },
     'author': {
-        'name': 'ooz',
+        'name': 'oz',
         'url': 'https://oliz.io'
     },
     'social': {
