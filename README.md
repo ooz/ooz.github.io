@@ -2,18 +2,18 @@
 title: out of zeit
 ---
 
-[Blog](https://ooz.github.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog)
+[Blog](https://oliz.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog)
 
-[Website](https://ooz.github.io) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
+[Website](https://oliz.io) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
 
 
 ## Projects
 
-[Zeitgeist](https://ooz.github.io/zeitgeist/) [![CircleCI](https://circleci.com/gh/ooz/zeitgeist.svg?style=shield)](https://circleci.com/gh/ooz/zeitgeist)
+[Zeitgeist](https://oliz.io/zeitgeist/) [![CircleCI](https://circleci.com/gh/ooz/zeitgeist.svg?style=shield)](https://circleci.com/gh/ooz/zeitgeist)
 
-[Good Generator](https://ooz.github.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
+[Good Generator](https://oliz.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
 
-[Lifetime Clock](https://ooz.github.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
+[Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
 
 [Lego Designs](https://github.com/ooz/lego/)
 
@@ -22,9 +22,9 @@ title: out of zeit
 
 ## Global Game Jams
 
-[Ogre Forge](https://ooz.github.io/ogre-forge/)
+[Ogre Forge](https://oliz.io/ogre-forge/)
 
-[home is](https://ooz.github.io/home-is/)
+[home is](https://oliz.io/home-is/)
 
-[Handshake](https://ooz.github.io/handshake/)
+[Handshake](https://oliz.io/handshake/)
 
