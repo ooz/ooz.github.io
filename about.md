@@ -5,6 +5,12 @@ title: About
 Hey! I am Oliver, a Software Engineer at [ePages](https://www.epages.com/).
 When not sitting infront of computers I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.), messing around with Lego bricks and playing the <del>guitar</del> ukulele.
 
+### What's the deal with the logo/avatar?
+
+It's a modified version of the [German Naturschutzgebiet (nature reserve) sign](https://en.wikipedia.org/wiki/Naturschutzgebiet).
+Since the original image is in the public domain,
+I could crop it to look like a selfie and added the letter `z` in succession of the `oo` owl eyes to match my GitHub handle [`ooz`](https://github.com/ooz).
+
 ## Imprint
 
 Due to the personal nature of this website and blog, I am not required to provide full contact information.
@@ -37,12 +43,12 @@ These links are being provided as a convenience and for informational purposes o
 
 For all content located under (recursively) `./` and `blog/` (EXCEPT `blog/ext_img/`):
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />ooz, out of zeit by Oliver Zeit is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />ooz, out of zeit by Oliver Z. is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 All source code and code snippets from the content under (recursively) `./` and `blog/` (EXCEPT `blog/ext_img/`) are licensed under the MIT License:
 
 ```
-Copyright (c) 2017-2020 ooz, Oliver Z.
+Copyright (c) 2017-2020 Oliver Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
