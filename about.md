@@ -11,7 +11,7 @@ Due to the personal nature of this website and blog, I am not required to provid
 If you require this information, please write an email including justification to the following email address:
 
 ```
-oli ver ze it at gmail dot com
+hi at oliz dot io
 ```
 (replace at with @, dot with . and remove all spaces)
 
