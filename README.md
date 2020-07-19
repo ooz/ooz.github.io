@@ -15,6 +15,8 @@ title: out of zeit
 
 [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
 
+## Art
+
 [txt2sprite](https://github.com/ooz/txt2sprite)
 
 [Lego Designs](https://github.com/ooz/lego/)
