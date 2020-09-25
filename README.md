@@ -9,7 +9,7 @@ title: out of zeit
 
 ## Projects
 
-[Zeitgeist](https://oliz.io/zeitgeist/) [![CircleCI](https://circleci.com/gh/ooz/zeitgeist.svg?style=shield)](https://circleci.com/gh/ooz/zeitgeist)
+[Zeitgeist](https://oliz.io/zeitgeist/) [![CircleCI](https://circleci.com/gh/ooz/zeitgeist.svg?style=shield)](https://circleci.com/gh/ooz/zeitgeist) [weather](https://oliz.io/zeitgeist/weather.html)
 
 [Good Generator](https://oliz.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
 
