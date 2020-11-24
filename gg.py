@@ -46,6 +46,7 @@ f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{csp_and_referrer()}
 
 <title>{pagetitle(title)}</title>
 <link rel="canonical" href="{canonical_url}">
@@ -319,6 +320,7 @@ f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{csp_and_referrer()}
 
 <title>Index | {root_title}</title>
 <link rel="canonical" href="{base_url}">
@@ -344,6 +346,13 @@ f'''<!DOCTYPE html>
 </body>
 </html>
 '''
+
+def csp_and_referrer():
+    headers = [
+        gg.config.get('site', {}).get('csp', ''),
+        gg.config.get('site', {}).get('referrer', '')
+    ]
+    return '\n'.join(headers).strip()
 
 def is_root_readme(path):
     return os.path.relpath(path) == 'README.md'
