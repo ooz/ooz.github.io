@@ -10,7 +10,7 @@ config = {
         'title': 'out of zeit',
         'logo': 'static/owl.png',
         'about_url': 'https://oliz.io/about.html',
-        'csp': '''<meta http-equiv="Content-Security-Policy" content="script-src 'self'">''',
+        'csp': '''<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">''',
         'referrer': '''<meta name="referrer" content="no-referrer">'''
     },
     'author': {
