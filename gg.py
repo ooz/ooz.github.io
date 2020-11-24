@@ -311,7 +311,7 @@ def index(posts):
         url = post['url']
         if (day != '' and title != ''):
             posts_html.append('<tr><td>%s</td><td><a href="%s">%s</a></td></tr>' % (day, url, title))
-    posts_html = "\n".join(posts_html)
+    posts_html = '\n'.join(posts_html)
 
     return \
 f'''<!DOCTYPE html>
