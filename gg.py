@@ -136,7 +136,7 @@ td, th {{
 .nav {{ float: left; margin-right: 1rem; }}
 .social {{ float: right; margin-left: 1rem; }}
 
-.dark-mode {{ color: #FFF; background: #363636; }}
+.dark-mode {{ color: #CACACA; background: #363636; }}
 .dark-mode a {{ color: #0A7; }}
 .dark-mode blockquote {{ background: #222; border-left: 0.3rem solid #0A7; }}
 .dark-mode code {{ background: #222; }}
