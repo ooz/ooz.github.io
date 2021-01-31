@@ -26,6 +26,8 @@ title: out of zeit
 
 ## Global Game Jams
 
+[Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg)
+
 [Ogre Forge](https://oliz.io/ogre-forge/)
 
 [home is](https://oliz.io/home-is/)
