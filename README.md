@@ -21,6 +21,6 @@ title: out of zeit
 
 ## Global Game Jams
 
-[Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg)
+[Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg) (2021)
 
-[Ogre Forge](https://oliz.io/ogre-forge/), [home is](https://oliz.io/home-is/), [Handshake](https://oliz.io/handshake/)
+[Ogre Forge](https://oliz.io/ogre-forge/) (2020), [home is](https://oliz.io/home-is/) (2019), [Handshake](https://oliz.io/handshake/) (2018)
