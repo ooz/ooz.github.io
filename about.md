@@ -43,12 +43,12 @@ These links are being provided as a convenience and for informational purposes o
 
 For all content located under (recursively) `./` and `blog/` (EXCEPT `blog/ext_img/`):
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />ooz, out of zeit by Oliver Z. is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />by Oliver Z. is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 All source code and code snippets from the content under (recursively) `./` and `blog/` (EXCEPT `blog/ext_img/`) are licensed under the MIT License:
 
 ```
-Copyright (c) 2017-2020 Oliver Z.
+Copyright (c) 2017-2021 Oliver Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
