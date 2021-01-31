@@ -1,5 +1,5 @@
 ---
-title: Oliver Z. I/O
+title: Oliver Z.
 ---
 
 [Blog](https://oliz.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog) and [this website](https://oliz.io) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)

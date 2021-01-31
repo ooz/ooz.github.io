@@ -7,7 +7,7 @@ config = {
         'render_root_readme': True,
         'generate_sitemap': True,
         'additional_sitemap_entries': ['https://oliz.io/blog/'],
-        'title': 'out of zeit',
+        'title': 'Oliver Z.',
         'logo': 'static/owl.png',
         'about_url': 'https://oliz.io/about.html',
         'csp': '''<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">''',
