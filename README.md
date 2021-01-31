@@ -17,9 +17,7 @@ title: out of zeit
 
 ## Art
 
-[txt2sprite](https://github.com/ooz/txt2sprite)
-
-[Lego Designs](https://github.com/ooz/lego/)
+[txt2sprite](https://github.com/ooz/txt2sprite), [Lego Designs](https://github.com/ooz/lego/)
 
 [![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
@@ -28,9 +26,4 @@ title: out of zeit
 
 [Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg)
 
-[Ogre Forge](https://oliz.io/ogre-forge/)
-
-[home is](https://oliz.io/home-is/)
-
-[Handshake](https://oliz.io/handshake/)
-
+[Ogre Forge](https://oliz.io/ogre-forge/), [home is](https://oliz.io/home-is/), [Handshake](https://oliz.io/handshake/)
