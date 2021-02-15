@@ -170,7 +170,7 @@ def footer_navigation(root_url, is_root):
     if not is_root:
         nav.append(f'''<a href="{root_url}" class="nav">back</a>''')
     nav.append('''<a href="#" class="nav">top</a>''')
-    nav.append('''<a href="javascript:toggleTheme()" class="nav">🌚🌞</a>''')
+    nav.append('''<a href="javascript:toggleTheme()" class="nav">🌓</a>''')
     return '\n'.join(nav)
 
 def meta(author, description, tags):
