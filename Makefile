@@ -30,6 +30,12 @@ init:
 	pipenv --python 3
 	pipenv install
 
+test: | clean_coverage
+	pipenv install --dev
+	pipenv run coverage run --source=. -m pytest -vv
+	pipenv run coverage html --omit="test/*"
+	pipenv run coverage report --omit="test/*"
+
 deploy: all
 	git add .
 	git commit -am "Build by CircleCI `date` [skip ci]" || true
@@ -47,6 +53,10 @@ clean:
 	rm -f *.egg-info
 	pipenv --rm || true
 
-.PHONY: clean \
-install_pipenv init deploy \
+clean_coverage:
+	rm -rf htmlcov/
+	rm -f .coverage
+
+.PHONY: clean clean_coverage \
+install_pipenv init test deploy \
 all fire realfire newpost openlatest update
