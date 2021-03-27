@@ -2,19 +2,19 @@
 install_pipenv init test deploy \
 all help newpost openlatest update
 
+all: ## Build the site, generate all pages from *.md files
+	pipenv run python gg.py ./
+
 help: ## Show this help
 	@grep -Eh '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-all: ## Builds the site, generates all pages from *.md files
-	pipenv run python gg.py ./
-
-newpost: ## Creates a new post .md file with current time
+newpost: ## Create a new post .md file with current time
 	pipenv run python gg.py --newpost
 
-openlatest: ## Opens the latest .md file in vim
+openlatest: ## Open the latest .md file in vim
 	@ls -1t `find . -type f -name '*.md'` | head -n 1 | xargs -o vim
 
-update: ## Updates ggpy
+update: ## Update ggpy
 	wget -q https://raw.githubusercontent.com/ooz/ggpy/master/gg.py -O gg.py
 	wget -q https://raw.githubusercontent.com/ooz/ggpy/master/Pipfile -O Pipfile
 	@echo "Unfortunately the Makefile cannot be updated automatically!"
