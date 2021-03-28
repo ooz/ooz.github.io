@@ -148,7 +148,8 @@ def opengraph(title, url, description, date, config=None):
     if image != '/':
         meta_properties.append(('og:image', image))
     meta_properties.append(('og:locale', 'en-US'))
-    meta_properties.append(('article:published_time', date))
+    if len(date):
+        meta_properties.append(('article:published_time', date))
     return '\n'.join([_meta_tag('property', prop[0], prop[1]) for prop in meta_properties])
 
 def _meta_tag(type, type_value, content):
