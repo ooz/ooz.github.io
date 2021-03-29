@@ -13,7 +13,7 @@ title: Oliver Z.
 ## Art
 
 * [txt2sprite](https://github.com/ooz/txt2sprite)
-* [Lego Designs](https://github.com/ooz/lego/)
+* [Lego Designs](https://oliz.io/lego/)
 
 [![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
