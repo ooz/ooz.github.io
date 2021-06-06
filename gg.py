@@ -151,9 +151,9 @@ def posts_index(posts):
         title = post['title']
         url = post['url']
         if (day != '' and title != ''):
-            posts_html.append('<li>%s <a href="%s">%s</a></li>' % (day, url, title))
+            posts_html.append('<p>%s<br><a href="%s">%s</a></p>' % (day, url, title))
     posts_html = '\n'.join(posts_html)
-    return html_tag_block('ul', posts_html)
+    return html_tag_block('div', posts_html)
 
 ## META, SOCIAL AND MACHINE-READABLES
 def meta(author, description, tags):
