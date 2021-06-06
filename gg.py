@@ -28,7 +28,6 @@ import markdown
 ##############################################################################
 # MARKDOWN CONVERSION
 ##############################################################################
-
 def configure_markdown():
     return markdown.Markdown(
         extensions = [
@@ -85,7 +84,7 @@ def logo_url(config=None):
     logo_url = base_url + '/' + config.get('site', {}).get('logo', '')
     return logo_url if logo_url != '/' else ''
 
-def header(logo_url, title_html, date, config=None):
+def header(logo_url, title_html, date='', config=None):
     config = config or {}
     author_url = config.get('author', {}).get('url', '')
     lines = []
@@ -103,7 +102,7 @@ def pagetitle(title='', config=None):
         return title
     return root_title
 
-def post_header(title_html, date, config=None):
+def post_header(title_html, date='', config=None):
     config = config or {}
     name = config.get('author', {}).get('name', '')
     author_url = config.get('author', {}).get('url', '')
@@ -144,6 +143,17 @@ def about_and_social_icons(config=None):
 
 def _social_link(label, link):
     return f'<a href="{link}" class="social">{label}</a>' if len(link) else ''
+
+def posts_index(posts):
+    posts_html = []
+    for post in reversed(sorted(posts, key=lambda post: post['date'])):
+        day = post['date'][:10]
+        title = post['title']
+        url = post['url']
+        if (day != '' and title != ''):
+            posts_html.append('<li>%s <a href="%s">%s</a></li>' % (day, url, title))
+    posts_html = '\n'.join(posts_html)
+    return html_tag_block('ul', posts_html)
 
 ## META, SOCIAL AND MACHINE-READABLES
 def meta(author, description, tags):
@@ -326,7 +336,6 @@ function initTheme() { let h=new Date().getHours(); if (h <= 8 || h >= 20) { tog
 #
 # * New markdown file
 # * Rendering markdown file as HTML
-# * Rendering index of all non-draft markdown files as HTML
 # * Rendering sitemap
 ##############################################################################
 TAG_DRAFT = '__draft__'
@@ -342,10 +351,9 @@ tags: {TAG_DRAFT}
 ---
 '''
 
-def template_post(post, config=None):
+def template_page(post, config=None):
     config = config or {}
     canonical_url = post.get('url', '')
-    body = post.get('html_section', '')
     title = post.get('title', '')
     date = post.get('date', '')
     tags = post.get('tags', '')
@@ -357,44 +365,20 @@ def template_post(post, config=None):
     author_name = config.get('author', {}).get('name', '')
     header_content = header(logo, post.get('html_headline', ''), date, config)
     footer_content = [
-        footer_navigation(base_url, post.get('is_root_index', False)),
+        footer_navigation(base_url, post.get('is_index', False)),
         about_and_social_icons(config)
     ]
     footer_content = '\n'.join([content for content in footer_content if content != ''])
-    return '\n'.join([
-        _template_common_start(title, canonical_url, config),
-        meta(author_name, description, tags),
-        twitter(config),
-        opengraph(title, canonical_url, description, date, config),
-        json_ld(raw_title, canonical_url, raw_description, config),
-        _template_common_body_and_end(header_content, body, footer_content)
-    ])
-
-def template_index(index, posts, config=None):
-    config = config or {}
-    canonical_url = config.get('site', {}).get('base_url', '')
-    root_title = config.get('site', {}).get('title', '')
-    logo = logo_url(config)
-    author_url = config.get('author', {}).get('url', '')
-    posts_html = []
-    for post in reversed(sorted(posts, key=lambda post: post['date'])):
-        day = post['date'][:10]
-        title = post['title']
-        url = post['url']
-        if (day != '' and title != ''):
-            posts_html.append('<tr><td>%s</td><td><a href="%s">%s</a></td></tr>' % (day, url, title))
-    posts_html = '\n'.join(posts_html)
-    index_title = index.get('title', '')
-    if not len(index_title):
-        index_title = 'Index'
-    header_content = f'''<a href="{author_url}"><img src="{logo}" class="avatar" /></a>
-<h1>{index_title}</h1>'''
-    body = html_tag_block('table', html_tag_block('tbody', posts_html))
-    footer_content = '\n'.join([footer_navigation(), about_and_social_icons(config)])
-    return '\n'.join([
-        _template_common_start(index_title, canonical_url, config),
-        _template_common_body_and_end(header_content, body, footer_content)
-    ])
+    blocks = [_template_common_start(title, canonical_url, config)]
+    if not post.get('is_index', False):
+        blocks.extend([
+            meta(author_name, description, tags),
+            twitter(config),
+            opengraph(title, canonical_url, description, date, config),
+            json_ld(raw_title, canonical_url, raw_description, config)
+        ])
+    blocks.append(_template_common_body_and_end(header_content, post.get('html_section', ''), footer_content))
+    return '\n'.join(blocks)
 
 def _template_common_start(title, canonical_url, config):
     logo = logo_url(config)
@@ -463,8 +447,7 @@ def write_file(path, content=''):
 def create_newpost(title):
     write_file(kebab_case(title) + '.md', template_newpost(title))
 
-TAG_INDEX = '__index__'
-def generate(directories, config=None):
+def scan_posts(directories, config=None):
     config = config or {}
     posts = []
     for directory in directories:
@@ -472,17 +455,22 @@ def generate(directories, config=None):
         for path in paths:
             post = read_post(directory, path, config=config)
             posts.append(post)
+    return posts
 
+TAG_INDEX = '__index__'
+def generate(directories, config=None):
+    config = config or {}
+    posts = scan_posts(directories, config)
     indices = [post for post in posts if TAG_INDEX in post['tags']]
     just_posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
     for index in indices:
-        index['html'] = template_index(index, just_posts, config)
+        index['html_section'] = posts_index(just_posts)
+        index['html'] = template_page(index, config)
     if config.get('site', {}).get('generate_sitemap', False):
         posts.append({
             'filepath': 'sitemap.xml',
             'html': template_sitemap(just_posts, config)
         })
-
     for post in posts:
         write_file(post['filepath'], post['html'])
 
@@ -499,9 +487,6 @@ def convert_canonical(directory, targetpath, config=None):
             return f'{targetpath[:-10]}'
     return targetpath
 
-def is_root_readme(path):
-    return os.path.relpath(path) == 'README.md'
-
 def read_post(directory, filepath, config=None):
     markdown_content = read_file(filepath)
     post = markdown2post(markdown_content, config)
@@ -510,8 +495,8 @@ def read_post(directory, filepath, config=None):
     post['filepath'] = targetpath
     post['url'] = canonical_url
     post['last_modified'] = last_modified(filepath)
-    post['is_root_index'] = is_root_readme(filepath)
-    post['html'] = template_post(post, config)
+    post['is_index'] = TAG_INDEX in post['tags']
+    post['html'] = template_page(post, config)
     return post
 
 def last_modified(filepath):
