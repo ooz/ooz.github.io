@@ -4,6 +4,7 @@
 Author: Oliver Z., https://oliz.io
 Description: Minimal static site generator easy to use with GitHub Pages o.s.
 Website: https://oliz.io/ggpy/
+Version: 1.0
 License: Dual-licensed under GNU AGPLv3 or MIT License,
          see LICENSE.txt file for details.
 
@@ -138,13 +139,14 @@ def about_and_social_icons(config=None):
         _social_link('email', f'mailto:{email}' if len(email) else ''),
         _social_link('twitter', config.get('social', {}).get('twitter_url', '')),
         _social_link('github', config.get('social', {}).get('github_url', '')),
-        _social_link('about', config.get('site', {}).get('about_url', ''))
+        _social_link('about', config.get('social', {}).get('about_url', ''))
     ] if len(social)])
 
 def _social_link(label, link):
     return f'<a href="{link}" class="social">{label}</a>' if len(link) else ''
 
 def posts_index(posts):
+    posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
     posts_html = []
     for post in reversed(sorted(posts, key=lambda post: post['date'])):
         day = post['date'][:10]
@@ -214,13 +216,9 @@ f'''<script type="application/ld+json">
 ##############################################################################
 # HTML SNIPPETS
 ##############################################################################
-def csp_and_referrer(config=None):
+def additional_head_tags(config=None):
     config = config or {}
-    headers = [
-        config.get('site', {}).get('csp', ''),
-        config.get('site', {}).get('referrer', '')
-    ]
-    return '\n'.join(headers).strip()
+    return '\n'.join(config.get('site', {}).get('head', [])).strip()
 
 def html_opening_boilerplate():
     return \
@@ -351,6 +349,9 @@ tags: {TAG_DRAFT}
 ---
 '''
 
+TAG_NO_META = '__no_meta__'
+TAG_NO_HEADER = '__no_header__'
+TAG_NO_FOOTER = '__no_footer__'
 def template_page(post, config=None):
     config = config or {}
     canonical_url = post.get('url', '')
@@ -363,14 +364,16 @@ def template_page(post, config=None):
     base_url = config.get('site', {}).get('base_url', '')
     logo = logo_url(config)
     author_name = config.get('author', {}).get('name', '')
-    header_content = header(logo, post.get('html_headline', ''), date, config)
-    footer_content = [
-        footer_navigation(base_url, post.get('is_index', False), post.get('is_root', False)),
-        about_and_social_icons(config)
-    ]
-    footer_content = '\n'.join([content for content in footer_content if content != ''])
+    header_content = header(logo, post.get('html_headline', ''), date, config) if TAG_NO_HEADER not in tags else ''
+    footer_content = ''
+    if TAG_NO_FOOTER not in tags:
+        footer_content = [
+            footer_navigation(base_url, post.get('is_index', False), post.get('is_root', False)),
+            about_and_social_icons(config)
+        ]
+        footer_content = '\n'.join([content for content in footer_content if len(content)])
     blocks = [_template_common_start(title, canonical_url, config)]
-    if not post.get('is_index', False):
+    if (not post.get('is_index', False)) and TAG_NO_META not in tags:
         blocks.extend([
             meta(author_name, description, tags),
             twitter(config),
@@ -384,7 +387,7 @@ def _template_common_start(title, canonical_url, config):
     logo = logo_url(config)
     return '\n'.join([
         html_opening_boilerplate(),
-        csp_and_referrer(config),
+        additional_head_tags(config),
         html_tag_line('title', pagetitle(title, config)),
         html_tag_empty('link', [('rel', 'canonical'), ('href', canonical_url)]),
         html_tag_empty('link', [('rel', 'shortcut icon'), ('href', logo)]) if len(logo) else '',
@@ -393,16 +396,18 @@ def _template_common_start(title, canonical_url, config):
     ])
 
 def _template_common_body_and_end(header, section, footer):
-    return '\n'.join([
+    blocks = [
         html_head_body_boilerplate(),
-        html_tag_block('header', header),
+        html_tag_block('header', header) if len(header) else '',
         html_tag_block('section', section),
-        html_tag_block('footer', footer),
+        html_tag_block('footer', footer) if len(footer) else '',
         html_closing_boilerplate()
-    ])
+    ]
+    return '\n'.join([block for block in blocks if len(block)])
 
 def template_sitemap(posts, config=None):
     config = config or {}
+    posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
     sitemap_xml = []
     sitemap_xml.append('<?xml version="1.0" encoding="utf-8" standalone="yes" ?>')
     sitemap_xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
@@ -462,14 +467,13 @@ def generate(directories, config=None):
     config = config or {}
     posts = scan_posts(directories, config)
     indices = [post for post in posts if TAG_INDEX in post['tags']]
-    just_posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
     for index in indices:
-        index['html_section'] = posts_index(just_posts)
+        index['html_section'] = posts_index(posts)
         index['html'] = template_page(index, config)
     if config.get('site', {}).get('generate_sitemap', False):
         posts.append({
             'filepath': 'sitemap.xml',
-            'html': template_sitemap(just_posts, config)
+            'html': template_sitemap(posts, config)
         })
     for post in posts:
         write_file(post['filepath'], post['html'])
