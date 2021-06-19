@@ -15,7 +15,7 @@ title: Oliver Z.
 * [txt2sprite](https://github.com/ooz/txt2sprite)
 * [Lego Designs](https://oliz.io/mocs/)
 
-[![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
+[![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
 
 ## Global Game Jams
