@@ -2,14 +2,19 @@
 title: Oliver Z.
 ---
 
-[Blog](https://oliz.io/blog/) [![CircleCI](https://circleci.com/gh/ooz/blog.svg?style=shield)](https://circleci.com/gh/ooz/blog)
-[snippets](https://oliz.io/snippets/) [![CircleCI](https://circleci.com/gh/ooz/snippets.svg?style=shield)](https://circleci.com/gh/ooz/snippets),
-and [this website](https://oliz.io) [![CircleCI](https://circleci.com/gh/ooz/ooz.github.io.svg?style=shield)](https://circleci.com/gh/ooz/ooz.github.io)
+## [Blog](https://oliz.io/blog/) and [Snippets](https://oliz.io/snippets/)
+
+
+[![CircleCI: this website](https://img.shields.io/circleci/build/gh/ooz/ooz.github.io?label=Website)](https://circleci.com/gh/ooz/ooz.github.io)
+[![CircleCI: my blog](https://img.shields.io/circleci/build/gh/ooz/blog?label=Blog)](https://circleci.com/gh/ooz/blog)
+[![CircleCI: my micro-blog](https://img.shields.io/circleci/build/gh/ooz/snippets?label=Snippets)](https://circleci.com/gh/ooz/snippets)
+[![CircleCI: ggpy](https://img.shields.io/circleci/build/gh/ooz/ggpy?label=ggpy)](https://circleci.com/gh/ooz/ggpy)
+[![CircleCI: Zeitgeist](https://img.shields.io/circleci/build/gh/ooz/zeitgeist?label=Zeitgeist)](https://circleci.com/gh/ooz/zeitgeist)
 
 ## Projects
 
-* [Zeitgeist](https://oliz.io/zeitgeist/) [![CircleCI](https://circleci.com/gh/ooz/zeitgeist.svg?style=shield)](https://circleci.com/gh/ooz/zeitgeist) [weather](https://oliz.io/zeitgeist/weather.html)
-* [Good Generator](https://oliz.io/ggpy/) [![CircleCI](https://circleci.com/gh/ooz/ggpy.svg?style=shield)](https://circleci.com/gh/ooz/ggpy)
+* [Zeitgeist](https://oliz.io/zeitgeist/), [weather](https://oliz.io/zeitgeist/weather.html)
+* [Good Generator](https://oliz.io/ggpy/)
 * [txt2sprite](https://github.com/ooz/txt2sprite)
 * [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
 
