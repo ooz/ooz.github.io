@@ -2,12 +2,11 @@
 title: Oliver Z.
 ---
 
-## [Blog](https://oliz.io/blog/) and [Snippets](https://oliz.io/snippets/)
+## [Blog](https://oliz.io/blog/)
 
 
 [![CircleCI: this website](https://img.shields.io/circleci/build/gh/ooz/ooz.github.io?label=Website)](https://circleci.com/gh/ooz/ooz.github.io)
 [![CircleCI: my blog](https://img.shields.io/circleci/build/gh/ooz/blog?label=Blog)](https://circleci.com/gh/ooz/blog)
-[![CircleCI: my micro-blog](https://img.shields.io/circleci/build/gh/ooz/snippets?label=Snippets)](https://circleci.com/gh/ooz/snippets)
 [![CircleCI: ggpy](https://img.shields.io/circleci/build/gh/ooz/ggpy?label=ggpy)](https://circleci.com/gh/ooz/ggpy)
 [![CircleCI: Zeitgeist](https://img.shields.io/circleci/build/gh/ooz/zeitgeist?label=Zeitgeist)](https://circleci.com/gh/ooz/zeitgeist)
 
