@@ -142,14 +142,12 @@ def post_header(title_html, date='', config=None):
 </div>'''
     return header
 
-def footer_navigation(root_url='', is_index=False, is_root=False):
-    nav = []
-    if len(root_url) and not is_index and not is_root:
-        nav.append(f'''<a href="{root_url}" class="nav">back</a>''')
-    nav.append('''<a href="#" class="nav">top</a>''')
-    nav.append('''<a href="javascript:toggleTheme()" class="nav">🌓</a>''')
-    nav.append('''<a href="javascript:toggleFontSize()" class="nav">aA</a>''')
-    return '\n'.join(nav)
+def footer_navigation():
+    return '\n'.join([
+        '''<a href="#" class="nav">top</a>''',
+        '''<a href="javascript:toggleTheme()" class="nav">🌓</a>''',
+        '''<a href="javascript:toggleFontSize()" class="nav">aA</a>'''
+    ])
 
 def about_and_social_icons(config=None):
     config = config or {}
@@ -406,14 +404,13 @@ def template_page(post, config=None):
     description = post.get('description', '')
     raw_title = ''.join(post.get('raw_title', ''))
     raw_description = ''.join(post.get('raw_description', ''))
-    base_url = config.get('site', {}).get('base_url', '')
     logo = logo_url(config)
     author_name = config.get('author', {}).get('name', '')
     header_content = header(logo, post.get('html_headline', ''), date, config) if TAG_NO_HEADER not in tags else ''
     footer_content = ''
     if TAG_NO_FOOTER not in tags:
         footer_content = [
-            footer_navigation(base_url, post.get('is_index', False), post.get('is_root', False)),
+            footer_navigation(),
             about_and_social_icons(config)
         ]
         footer_content = '\n'.join([content for content in footer_content if len(content)])
@@ -531,9 +528,6 @@ def convert_canonical(directory, targetpath, config=None):
             return f'{targetpath[:-10]}'
     return targetpath
 
-def is_root_readme(path):
-    return os.path.relpath(path) == 'README.md'
-
 def read_post(directory, filepath, config=None):
     markdown_content = read_file(filepath)
     post = markdown2post(markdown_content, config)
@@ -542,7 +536,6 @@ def read_post(directory, filepath, config=None):
     post['filepath'] = targetpath
     post['url'] = canonical_url
     post['last_modified'] = last_modified(filepath)
-    post['is_root'] = is_root_readme(filepath)
     post['is_index'] = TAG_INDEX in post['tags']
     post['html'] = template_page(post, config)
     return post
