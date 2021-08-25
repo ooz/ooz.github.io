@@ -21,8 +21,8 @@ config = {
         'url': 'https://oliz.io'
     },
     'social': {
-        'about': 'https://oliz.io/about.html',
         'blog': 'https://oliz.io/blog/',
-        'github': 'https://github.com/ooz'
+        'github': 'https://github.com/ooz',
+        'about': 'https://oliz.io/about.html'
     }
 }
