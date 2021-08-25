@@ -21,9 +21,8 @@ config = {
         'url': 'https://oliz.io'
     },
     'social': {
-        'about_url': 'https://oliz.io/about.html',
-        'github_url': 'https://github.com/ooz',
-        'twitter_url': 'https://twitter.com/oozgo',
-        'twitter_username': '@oozgo'
+        'about': 'https://oliz.io/about.html',
+        'github': 'https://github.com/ooz',
+        'twitter': 'https://twitter.com/oozgo'
     }
 }
