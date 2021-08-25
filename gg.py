@@ -4,7 +4,7 @@
 Author: Oliver Z., https://oliz.io
 Description: Minimal static site generator easy to use with GitHub Pages o.s.
 Website: https://oliz.io/ggpy/
-Version: 1.3
+Version: 2.0.1
 License: Dual-licensed under GNU AGPLv3 or MIT License,
          see LICENSE.txt file for details.
 
@@ -25,6 +25,25 @@ import os
 import sys
 import time
 import markdown
+
+##############################################################################
+# META TAGS WITH SPECIAL FUNCTION
+##############################################################################
+
+TAG_DRAFT = '__draft__'
+TAG_INDEX = '__index__'
+TAG_INLINE = '__inline__'
+TAG_NO_FOOTER = '__no_footer__'
+TAG_NO_HEADER = '__no_header__'
+TAG_NO_META = '__no_meta__'
+SPECIAL_TAGS = [
+    TAG_DRAFT,
+    TAG_INDEX,
+    TAG_INLINE,
+    TAG_NO_FOOTER,
+    TAG_NO_HEADER,
+    TAG_NO_META
+]
 
 ##############################################################################
 # MARKDOWN CONVERSION
@@ -134,14 +153,14 @@ def footer_navigation(root_url='', is_index=False, is_root=False):
 
 def about_and_social_icons(config=None):
     config = config or {}
-    email = config.get('social', {}).get('email', config.get('author', {}).get('email', ''))
+    social_config = config.get('social', {})
 
-    return '\n'.join([social for social in [
-        _social_link('email', f'mailto:{email}' if len(email) else ''),
-        _social_link('twitter', config.get('social', {}).get('twitter_url', '')),
-        _social_link('github', config.get('social', {}).get('github_url', '')),
-        _social_link('about', config.get('social', {}).get('about_url', ''))
-    ] if len(social)])
+    social = []
+    for key in social_config.keys():
+        val = social_config[key]
+        social.append(_social_link(key, val))
+
+    return '\n'.join(reversed(social))
 
 def _social_link(label, link):
     return f'<a href="{link}" class="social">{label}</a>' if len(link) else ''
@@ -154,65 +173,59 @@ def posts_index(posts):
         title = post['title']
         url = post['url']
         if (day != '' and title != ''):
-            posts_html.append(f'''<div class="card"><small class="social">{day}</small><a href="{url}">{title}</a></div>''')
-    posts_html = '\n'.join(posts_html)
-    return html_tag_block('div', posts_html)
-
-def posts_index_inline(posts):
-    posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
-    posts_html = []
-    for post in reversed(sorted(posts, key=lambda post: post['date'])):
-        day = post['date'][:10]
-        title = post['title']
-        html_headline = post['html_headline']
-        anchor = html_headline[8:html_headline.find('">')] # Extract id from headline
-        description = post.get('description', '')
-        url = post['url']
-        content = post.get('html_section', '')
-        if (day != '' and title != ''):
-            content_chars_count = len(content)
-            content_lines_count = content.count('\n') + 1
-            posts_html.append(f'''<div class="card"><small class="social">{day}</small>''')
-            if content_chars_count > 500 or content_lines_count > 10:
-                if description == title:
-                    posts_html.append(f'''<details><summary><a href="#{anchor}">{html_headline.replace('h1', 'b')}</a></summary>''')
+            is_inlined = TAG_INLINE in post['tags']
+            if is_inlined:
+                content = post.get('html_section', '')
+                description = post.get('description', '')
+                content_chars_count = len(content)
+                content_lines_count = content.count('\n') + 1
+                posts_html.append(f'''<div class="card"><small class="social">{day}</small>''')
+                if content_chars_count > 500 or content_lines_count > 10:
+                    if description == title:
+                        posts_html.append(f'''<details><summary><a href="{url}"><b>{title}</b></a></summary>''')
+                    else:
+                        posts_html.append(f'''<a href="{url}"><b>{title}</b></a>''')
+                        posts_html.append(f'''<details><summary>{description}</summary>''')
+                    posts_html.append(f'''{content}''')
+                    posts_html.append(f'''</details>''')
                 else:
-                    posts_html.append(f'''<a href="#{anchor}">{html_headline.replace('h1', 'b')}</a>''')
-                    posts_html.append(f'''<details><summary>{description}</summary>''')
-                posts_html.append(f'''{content}''')
-                posts_html.append(f'''</details>''')
+                    posts_html.append(f'''<a href="{url}"><b>{title}</b></a>''')
+                    if description != title and content_chars_count == 0:
+                        posts_html.append(html_tag_block('div', f'{description}'))
+                    else:
+                        posts_html.append(html_tag_block('div', f'{content}'))
+                posts_html.append(f'''</div>''')
             else:
-                posts_html.append(f'''<a href="#{anchor}">{html_headline.replace('h1', 'b')}</a>''')
-                if description != title and content_chars_count == 0:
-                    posts_html.append(html_tag_block('div', f'{description}'))
-                else:
-                    posts_html.append(html_tag_block('div', f'{content}'))
-            posts_html.append(f'''</div>''')
+                posts_html.append(f'''<div class="card"><small class="social">{day}</small><a href="{url}"><b>{title}</b></a></div>''')
     posts_html = '\n'.join(posts_html)
     return html_tag_block('div', posts_html)
 
 ## META, SOCIAL AND MACHINE-READABLES
 def meta(author, description, tags):
     meta_names = []
+    keywords = _sanitize_special_tags(tags)
     if len(author):
         meta_names.append(('author', author))
     if len(description):
         meta_names.append(('description', description))
-    if len(tags):
-        meta_names.append(('keywords', tags))
+    if len(keywords):
+        meta_names.append(('keywords', keywords))
     return '\n'.join([_meta_tag('name', name[0], name[1]) for name in meta_names])
 
-def twitter(config=None):
-    config = config or {}
-    username = config.get('social', {}).get('twitter_username', '')
-    if not len(username):
-        return ''
-    meta_names = [
-        ('twitter:author', username),
-        ('twitter:card', 'summary'),
-        ('twitter:creator', username)
-    ]
-    return '\n'.join([_meta_tag('name', name[0], name[1]) for name in meta_names])
+def _sanitize_special_tags(tags):
+    '''Refactor to use regex
+    '''
+    sanitized = tags
+    for tag in SPECIAL_TAGS:
+        tag_in_center_or_at_end = f', {tag}'
+        tag_at_beginning = f'{tag}, '
+        if tag_in_center_or_at_end in sanitized:
+            sanitized = sanitized.replace(tag_in_center_or_at_end, '')
+        elif tag_at_beginning in sanitized:
+            sanitized = sanitized.replace(tag_at_beginning, '')
+        elif tag == sanitized:
+            sanitized = ''
+    return sanitized
 
 def opengraph(title, url, description, date, config=None):
     '''url parameter should end with "/" to denote a directory!
@@ -372,7 +385,6 @@ function toggleFontSize() { document.body.classList.toggle("large-font") }'''
 # * Rendering markdown file as HTML
 # * Rendering sitemap
 ##############################################################################
-TAG_DRAFT = '__draft__'
 def template_newpost(title='Title', description='-'):
     now = time.localtime()
     now_utc_formatted = time.strftime('%Y-%m-%dT%H:%M:%SZ', now)
@@ -385,9 +397,6 @@ tags: {TAG_DRAFT}
 ---
 '''
 
-TAG_NO_META = '__no_meta__'
-TAG_NO_HEADER = '__no_header__'
-TAG_NO_FOOTER = '__no_footer__'
 def template_page(post, config=None):
     config = config or {}
     canonical_url = post.get('url', '')
@@ -412,7 +421,6 @@ def template_page(post, config=None):
     if (not post.get('is_index', False)) and TAG_NO_META not in tags:
         blocks.extend([
             meta(author_name, description, tags),
-            twitter(config),
             opengraph(title, canonical_url, description, date, config),
             json_ld(raw_title, canonical_url, raw_description, config)
         ])
@@ -495,8 +503,6 @@ def scan_posts(directories, config=None):
             posts.append(post)
     return posts
 
-TAG_INDEX = '__index__'
-TAG_INDEX_INLINE = '__index_inline_posts__'
 def generate(directories, config=None):
     config = config or {}
     posts = scan_posts(directories, config)
@@ -504,18 +510,13 @@ def generate(directories, config=None):
     for index in indices:
         index['html_section'] = posts_index(posts)
         index['html'] = template_page(index, config)
-    inline_indices = [post for post in posts if TAG_INDEX_INLINE in post['tags']]
-    for index in inline_indices:
-        index['html_section'] = posts_index_inline(posts)
-        index['html'] = template_page(index, config)
-    if len(inline_indices) == 0 and config.get('site', {}).get('generate_sitemap', False):
+    if config.get('site', {}).get('generate_sitemap', False):
         posts.append({
             'filepath': 'sitemap.xml',
             'html': template_sitemap(posts, config)
         })
     for post in posts:
-        if len(inline_indices) == 0 or TAG_INDEX_INLINE in post['tags']:
-            write_file(post['filepath'], post['html'])
+        write_file(post['filepath'], post['html'])
 
 def convert_canonical(directory, targetpath, config=None):
     config = config or {}
