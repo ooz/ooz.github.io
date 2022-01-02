@@ -4,7 +4,7 @@
 Author: Oliver Z., https://oliz.io
 Description: Minimal static site generator easy to use with GitHub Pages o.s.
 Website: https://oliz.io/ggpy/
-Version: 2.0.1+dev
+Version: 3.0
 License: Dual-licensed under GNU AGPLv3 or MIT License,
          see LICENSE.txt file for details.
 
@@ -457,7 +457,7 @@ def template_sitemap(posts, config=None):
     all_entries = [(post['url'], post['last_modified']) for post in posts]
     all_entries = all_entries + [(entry, '') for entry in additional_entries]
     all_entries = sorted(all_entries, key=lambda entry: entry[0])
-    for entry in all_entries:
+    for entry in all_entries[:50000]:
         sitemap_xml.append('  <url>')
         sitemap_xml.append('    <loc>%s</loc>' % escape(entry[0]))
         if len(entry[1]):
@@ -469,6 +469,7 @@ def template_sitemap(posts, config=None):
 def template_rss(posts, config=None):
     config = config or {}
     posts = [post for post in posts if TAG_DRAFT not in post.get('tags', []) and TAG_INDEX not in post.get('tags', [])]
+    posts = sorted(posts, key=lambda post: post['last_modified'])
     base_url = xmlescape(config.get('site', {}).get('base_url', ''))
     title = xmlescape(config.get('site', {}).get('title', ''))
     title = base_url if (title == '' and base_url != '') else title
@@ -482,7 +483,7 @@ def template_rss(posts, config=None):
     rss_xml.append(f'''    <generator>Good Generator.py -- ggpy -- https://oliz.io/ggpy</generator>''')
     rss_xml.append(f'''    <lastBuildDate>{utils.formatdate()}</lastBuildDate>''')
     rss_xml.append(f'''    <atom:link href="{'rss.xml' if base_url == '' else f'{base_url}/rss.xml'}" rel="self" type="application/rss+xml" />''')
-    for post in posts:
+    for post in posts[-10:]: # Limit to the lastest 10 posts
         escaped_url = xmlescape(post.get('url', ''))
         escaped_title = xmlescape(post.get('title', ''))
         escaped_title = escaped_url if (escaped_title == '' and escaped_url != '') else escaped_title
@@ -582,7 +583,7 @@ def read_post(directory, filepath, config=None):
     canonical_url = convert_canonical(directory, targetpath, config)
     post['filepath'] = targetpath
     post['url'] = canonical_url
-    post['last_modified'] = last_modified(filepath)
+    post['last_modified'] = last_modified(filepath, post['date'])
     post['is_index'] = TAG_INDEX in post['tags']
     post['html'] = template_page(post, config)
     return post
@@ -594,11 +595,11 @@ try:
 except ImportError: # pragma: no cover because git package is normally present, last_modified tested without
     print('No gitpython package found, degrading functionality (no last_modified support)!', file=sys.stderr)
 
-def last_modified(filepath):
+def last_modified(filepath, default=''):
     if REPO:
         for commit in REPO.iter_commits(paths=filepath, max_count=1):
             return time.strftime('%Y-%m-%d', time.gmtime(commit.authored_date))
-    return ''
+    return default
 
 def now_utc_formatted():
     now = time.localtime()
