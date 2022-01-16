@@ -4,7 +4,7 @@
 Author: Oliver Z., https://oliz.io
 Description: Minimal static site generator easy to use with GitHub Pages o.s.
 Website: https://oliz.io/ggpy/
-Version: 3.0
+Version: 3.0.1
 License: Dual-licensed under GNU AGPLv3 or MIT License,
          see LICENSE.txt file for details.
 
@@ -462,7 +462,7 @@ def template_sitemap(posts:List[dict], config:Optional[dict]=None) -> str:
         sitemap_xml.append('  <url>')
         sitemap_xml.append('    <loc>%s</loc>' % escape(entry[0]))
         if len(entry[1]):
-            sitemap_xml.append('    <lastmod>%s</lastmod>' % entry[1])
+            sitemap_xml.append('    <lastmod>%s</lastmod>' % entry[1][:10])
         sitemap_xml.append('  </url>')
     sitemap_xml.append('</urlset>\n')
     return '\n'.join(sitemap_xml)
@@ -599,7 +599,7 @@ except ImportError: # pragma: no cover because git package is normally present, 
 def last_modified(filepath:str, default:str='') -> str:
     if REPO:
         for commit in REPO.iter_commits(paths=filepath, max_count=1):
-            return time.strftime('%Y-%m-%d', time.gmtime(commit.authored_date))
+            return time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(commit.authored_date))
     return default
 
 def now_utc_formatted() -> str:
