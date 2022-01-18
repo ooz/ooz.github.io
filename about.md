@@ -48,7 +48,7 @@ For all content located under (recursively) `./` and `blog/` (EXCEPT any `*/ext_
 All source code and code snippets from the content under (recursively) `./` and `blog/` (EXCEPT any `*/ext_img/*` resource/directory) are licensed under the MIT License:
 
 ```
-Copyright (c) 2017-2021 Oliver Z.
+Copyright (c) 2017-2022 Oliver Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
