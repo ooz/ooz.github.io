@@ -25,7 +25,9 @@ title: Oliver Z.
 
 ## Global Game Jams
 
-* [NetMons](https://netmons.net) (2022)
+* [NetMons](https://netmons.net) (2022)<br>
+  ![Be the Mon!](https://netmons.net/screenshots/screen0.png)
+  ![Call friends and have a party at night!](https://netmons.net/screenshots/screen2.png)
 * [Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg) (2021)
 * [Ogre Forge](https://oliz.io/ogre-forge/) (2020)
 * [home is](https://oliz.io/home-is/) (2019)
