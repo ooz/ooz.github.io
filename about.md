@@ -46,7 +46,7 @@ For all content located under (recursively) `./` and `blog/` (EXCEPT any `*/ext_
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="static/ext_img/cc_by-nc-sa_4.0_88x31.png" /></a><br />by Oliver Z. is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-All source code and code snippets from the content under (recursively) `./` and `blog/` (EXCEPT any `*/ext_img/*` resource/directory) are licensed under the MIT License:
+All code snippets from the content directly under `./` and `blog/` (EXCEPT any `*/ext_img/*` resource/directory) are licensed under the MIT License:
 
 ```
 Copyright (c) 2017-2022 Oliver Z.
