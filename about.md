@@ -25,8 +25,9 @@ info at oliz dot io
 
 This is a personal website and blog, that you can use without the need to provide personal data.
 This website does not set any cookies and does not track your browsing activity.
+It may link to external resources (e.g. images, other websites), which may track you if your client or webbrowser is configured to automatically follow such hyperlinks (see "Disclaimer for External Links" below).
 You cannot comment on anything or signup for a newsletter.
-This website is statically hosted on GitHub Pages.
+This website is statically hosted on GitHub.
 That company might keep various logs on its servers to provide this service.
 The respective legal notices apply:
 
@@ -36,8 +37,8 @@ If you want to give feedback or comment on one of my posts, feel free to [open a
 
 ## Disclaimer for External Links
 
-This website and blog may contain links to external websites or services.
-These links are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval by myself of any of the products, services or opinions of the corporation or organization or individual. I bear no responsibility for the accuracy, legality or content of the external site or for that of subsequent links. Contact the external site for answers to questions regarding its content.
+This website and blog may contain hyperlinks ("links") to external websites, services, images or other resources.
+These links are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval by myself of any of the products, services or opinions of the corporation or organization or individual. I bear no responsibility for the accuracy, legality, privacy or content of the external site, resource or for that of subsequent links. Contact the external site for answers to questions regarding its content or privacy policy.
 
 ## License and Copyright
 
