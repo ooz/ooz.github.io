@@ -259,8 +259,7 @@ def json_ld(title:str, url:str, description:str, config:Optional[dict]=None) -> 
     json_escaped_description = description.replace('"', '\\"')
     name_block = f',"name":"{json_escaped_root_title}"' if len(root_title) else ''
     return \
-f'''<script type="application/ld+json">
-{{"@context":"http://schema.org","@type":"WebSite","headline":"{json_escaped_title}","url":"{url}"{name_block},"description":"{json_escaped_description}"}}</script>'''
+f'''<script type="application/ld+json">{{"@context":"http://schema.org","@type":"WebSite","headline":"{json_escaped_title}","url":"{url}"{name_block},"description":"{json_escaped_description}"}}</script>'''
 
 ##############################################################################
 # HTML SNIPPETS
