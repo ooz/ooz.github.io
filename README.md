@@ -13,8 +13,6 @@ title: Oliver Z.
 
 ## Creative
 
-* [Lego Designs](https://oliz.io/mocs/)
-
 Global Game Jams:
 
 * [NetMons](https://netmons.net) (2022)<br>
@@ -23,5 +21,9 @@ Global Game Jams:
 * [Ogre Forge](https://oliz.io/ogre-forge/) (2020)
 * [home is](https://oliz.io/home-is/) (2019)
 * [Handshake](https://oliz.io/handshake/) (2018)
+
+Other:
+
+* [Lego Designs](https://oliz.io/mocs/)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
