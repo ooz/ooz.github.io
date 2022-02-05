@@ -1,5 +1,5 @@
 ---
-title: Oliver Z. I/O
+title: Oliver Z.
 ---
 
 ## [Blog](https://oliz.io/blog/)
