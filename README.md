@@ -15,13 +15,13 @@ title: Oliver Z.
 
 * [Lego Designs](https://oliz.io/mocs/)
 
-[![Bauhaus Creatures](https://raw.githubusercontent.com/ooz/art/master/bauhaus_creatures/examples/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
+[![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
 
 ## Global Game Jams
 
 * [NetMons](https://netmons.net) (2022)<br>
-  ![Be the Mon!](https://netmons.net/screenshots/screen0.png)
-  ![Call friends and have a party at night!](https://netmons.net/screenshots/screen2.png)
+  ![Be the Mon!](static/screen0.png)
+  ![Call friends and have a party at night!](static/screen2.png)
 * [Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg) (2021)
 * [Ogre Forge](https://oliz.io/ogre-forge/) (2020)
 * [home is](https://oliz.io/home-is/) (2019)
