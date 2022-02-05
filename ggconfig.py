@@ -10,7 +10,7 @@ config = {
             'https://oliz.io/mocs/'
         ],
         'title': 'Oliver Z.',
-        'logo': 'static/owl.png',
+        'logo': 'static/owl_256.png',
         'head': [
             '''<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">''',
             '''<meta name="referrer" content="no-referrer">'''
