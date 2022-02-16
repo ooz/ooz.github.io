@@ -2,8 +2,15 @@
 title: About
 ---
 
-Hey! I am Oliver, a Software Engineer at [ePages](https://www.epages.com/).
-When not sitting infront of computers I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.), messing around with Lego bricks and playing the <del>guitar</del> ukulele.
+Hey!
+I'm Oliver, a Software Engineer at [ePages](https://www.epages.com/).
+When not sitting infront of computers I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.) and messing around with Lego bricks.
+
+For when Monero (XMR) bits become convenient, I appreciate them at:
+
+```
+83C57cgiLwPK7yCa7yb4a1YFGHWFhzqtjDjPBtCuvDA2Tbhf9eMT7h61J1CP2TQ5bpPHx7a3QQbYxceU89f8EhWRMRz4JoG
+```
 
 ### What's the deal with the logo/avatar?
 
