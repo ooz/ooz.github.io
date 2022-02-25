@@ -7,3 +7,5 @@ title: Status
 [![CircleCI: ggpy](https://img.shields.io/circleci/build/gh/ooz/ggpy?label=ggpy)](https://circleci.com/gh/ooz/ggpy)
 [![CircleCI: Zeitgeist](https://img.shields.io/circleci/build/gh/ooz/zeitgeist?label=Zeitgeist)](https://circleci.com/gh/ooz/zeitgeist)
 
+Alternative URL: https://ooz.github.io/
+
