@@ -26,7 +26,7 @@ If you require this information, please write an email including justification t
 ```
 info at oliz dot io
 ```
-(replace at with @, dot with . and remove all spaces)
+(replace `at` with `@`, `dot` with `.` and remove all spaces)
 
 ## Privacy Information
 
@@ -40,7 +40,7 @@ The respective legal notices apply:
 
 * GitHub: [Terms of Service](https://help.github.com/articles/github-terms-of-service/), [Privacy Policy](https://help.github.com/articles/github-privacy-statement/)
 
-If you want to give feedback or comment on one of my posts, feel free to [open a GitHub issue](https://github.com/ooz/blog/issues) (public) or write me an email (see above, private). Policies of the respective services apply.
+**If you want to give feedback or comment on one of my posts, feel free to write me an email (see above).**
 
 ## Disclaimer for External Links
 
