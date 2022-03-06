@@ -2,9 +2,12 @@
 title: About
 ---
 
-Hey!
-I'm Oliver, a Software Engineer at [ePages](https://www.epages.com/).
-When not sitting infront of computers I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.) and messing around with Lego bricks.
+Hey, I'm Oliver, a Software Engineer and Computer Scientist (M.Sc.) living in Germany. Nice to have you as a reader!
+When not sitting in front of computers, I like doing various sports (Shotokan Karate, BWE, Yoga, running, swimming etc.) and messing around with Lego bricks.
+
+This site and blog grow continuously, so it may happen that old things get updated/changed.
+[Blog updates can be subscribed to via RSS](https://oliz.io/blog/rss.xml).
+If you want to give feedback or comment on one of my posts, feel free to write me an email (see **Imprint** below).
 
 For when Monero (XMR) bits become convenient, I appreciate them at:
 
@@ -20,7 +23,7 @@ I could crop it to look like a selfie and add the letter `z` in succession of th
 
 ## Imprint
 
-Due to the personal nature of this website and blog, I am not required to provide full contact information.
+Due to the personal, non-commercial nature of this website and blog, I am not required to provide full contact information.
 If you require this information, please write an email including justification to the following email address:
 
 ```
@@ -39,8 +42,6 @@ That company might keep various logs on its servers to provide this service.
 The respective legal notices apply:
 
 * GitHub: [Terms of Service](https://help.github.com/articles/github-terms-of-service/), [Privacy Policy](https://help.github.com/articles/github-privacy-statement/)
-
-**If you want to give feedback or comment on one of my posts, feel free to write me an email (see above).**
 
 ## Disclaimer for External Links
 
