@@ -15,5 +15,3 @@ Curated, unsorted list of good stuff on the independent internet ("indienet"):
 |[Drew DeVault](https://drewdevault.com/)|Dev, societal, cultural topics. Indienet advocate, too much wheel re-invention for my taste, but legitimate points!|
 |[Low-tech Magazine](https://solar.lowtechmagazine.com/)|Alternative view on some technical, engineering problems (e.g. wind turbines, solar panels and hot water bottles!)|
 
-TODO: maybe join some webrings or things like https://250kb.club/
-

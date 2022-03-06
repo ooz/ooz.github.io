@@ -1,5 +1,5 @@
 ---
-title: Oliver Z.
+title: Oli Z**
 ---
 
 ## [Blog](https://oliz.io/blog/)
@@ -28,3 +28,4 @@ Other:
 * [Lego Designs](https://oliz.io/mocs/)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
+

@@ -9,12 +9,6 @@ This site and blog grow continuously, so it may happen that old things get updat
 [Blog updates can be subscribed to via RSS](https://oliz.io/blog/rss.xml).
 If you want to give feedback or comment on one of my posts, feel free to write me an email (see **Imprint** below).
 
-For when Monero (XMR) bits become convenient, I appreciate them at:
-
-```
-83C57cgiLwPK7yCa7yb4a1YFGHWFhzqtjDjPBtCuvDA2Tbhf9eMT7h61J1CP2TQ5bpPHx7a3QQbYxceU89f8EhWRMRz4JoG
-```
-
 ### What's the deal with the logo/avatar?
 
 It's a modified version of the [German Naturschutzgebiet (nature reserve) sign](https://en.wikipedia.org/wiki/Naturschutzgebiet).
@@ -52,12 +46,16 @@ These links are being provided as a convenience and for informational purposes o
 
 For all content located directly under `./` and recursively under `blog/` (EXCEPT any `*/ext_img/*` resource/directory):
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="static/ext_img/cc_by-nc-sa_4.0_88x31.png" /></a><br />by Oliver Z. is licensed under: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" src="static/ext_img/cc_by-nc-sa_4.0_88x31.png" />
+</a><br />
+by Oliver Z. (encouraged his friend Plato) is licensed under:
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a>.
 
 All code snippets from the content directly under `./` and recursively under `blog/` (EXCEPT any `*/ext_img/*` resource/directory) are licensed under the MIT License:
 
 ```
-Copyright (c) 2017-2022 Oliver Z.
+Copyright (c) 2016-2022 Oliver Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
