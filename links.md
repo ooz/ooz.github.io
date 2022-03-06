@@ -4,7 +4,7 @@ title: Links
 
 Curated, unsorted list of good stuff on the independent internet ("indienet"):
 
-|URL|Why?|
+|Site|Why?|
 |---|---|
 |[Chase Seibert Blog](https://chase-seibert.github.io/blog/)|Dev, now Engineering Manager at Dropbox. [Originally inspired me to start blogging](https://chase-seibert.github.io/blog/2014/08/01/why-blogging.html)|
 |[victoria.dev](https://victoria.dev/)|Dev topics, indienet advocate, nice travel blog|
