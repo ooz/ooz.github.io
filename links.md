@@ -2,6 +2,12 @@
 title: Links
 ---
 
+Where else to find me:
+
+* https://github.com/ooz
+
+---
+
 Curated, unsorted list of good stuff on the independent internet ("indienet"):
 
 |Site|Why?|
