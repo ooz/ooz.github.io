@@ -9,7 +9,7 @@ config = {
             'https://oliz.io/blog/',
             'https://oliz.io/mocs/'
         ],
-        'title': 'Oli Z**',
+        'title': 'Oli Z.',
         'logo': 'static/owl_256.png',
         'head': [
             '''<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline'">''',

@@ -1,5 +1,5 @@
 ---
-title: Oli Z**
+title: Oli Z.
 ---
 
 ## [Blog](https://oliz.io/blog/)
