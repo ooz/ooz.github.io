@@ -25,7 +25,7 @@ Global Game Jams:
 
 Other:
 
-* [Soul Drainers](https://oliz.io/art/soul-drainers/)
+* [Soul Drainers](https://oliz.io/art/soul-drainers/) (Warning: high resolution photos!)
 * [Lego Designs](https://oliz.io/mocs/)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
