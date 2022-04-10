@@ -23,6 +23,10 @@ Global Game Jams:
 * [home is](https://oliz.io/home-is/) (2019)
 * [Handshake](https://oliz.io/handshake/) (2018)
 
+Writing (besides the above blog):
+
+* WIP: [Axioms for Humans](https://oliz.io/axioms/)
+
 Other:
 
 * [Soul Drainers](https://oliz.io/art/soul-drainers/) (Warning: high resolution photos!)
