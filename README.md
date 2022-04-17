@@ -2,7 +2,7 @@
 title: Oli Z.
 ---
 
-## [Blog](https://oliz.io/blog/)
+## [Weblog](https://oliz.io/blog/)
 
 ## Projects
 
