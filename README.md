@@ -9,7 +9,7 @@ title: Oli Z.
 * [Zeitgeist](https://oliz.io/zeitgeist/), [Investments](https://oliz.io/zeitgeist/investments.html), [Weather](https://oliz.io/zeitgeist/weather.html)
 * [Good Generator](https://oliz.io/ggpy/)
 * [txt2sprite](https://github.com/ooz/txt2sprite)
-* [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=35&regularHoursPerWeek=77&hourlyNet=16.10&angus)
+* [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=32&regularHoursPerWeek=77&hourlyNet=18.10&angus)
 
 ## Creative
 
