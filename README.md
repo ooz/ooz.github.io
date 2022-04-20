@@ -28,6 +28,8 @@ Other:
 * [Axioms for Humans](https://oliz.io/axioms/) (writing in progress)
 * [Soul Drainers](https://oliz.io/art/soul-drainers/) (Warning: high resolution photos!)
 * [Lego Designs](https://oliz.io/mocs/)
+* ["Music"](https://github.com/ooz/art/tree/master/music)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
+
 
