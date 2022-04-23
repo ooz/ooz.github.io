@@ -16,6 +16,7 @@ Curated, unsorted list of good stuff on the independent internet ("indienet"):
 |[araw.xyz](https://araw.xyz/)|Various musings, indienet advocate, travel reports, repairs and sustainability|
 |[faehnri.ch](https://faehnri.ch/)|Dev topics, indie making|
 | https://awlanisya.com |Upcoming blog on HR topics (mostly relevant for Germany)|
+| botmos.org | Game I'm currently developing |
 
 Where else to find me:
 
