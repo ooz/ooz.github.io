@@ -1,5 +1,5 @@
 ---
-title: Oli Z.
+title: Oliver G.W. Zeit
 ---
 
 ## [Weblog](https://oliz.io/blog/)
