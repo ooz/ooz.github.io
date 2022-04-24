@@ -23,6 +23,10 @@ Global Game Jams:
 * [home is](https://oliz.io/home-is/) (2019)
 * [Handshake](https://oliz.io/handshake/) (2018)
 
+Modern Art:
+
+* [Noise Generator for Eye Doctors](https://github.com/ooz/art/tree/master/noise-generator)
+
 Other:
 
 * [Axioms for Humans](https://oliz.io/axioms/) (writing in progress)
