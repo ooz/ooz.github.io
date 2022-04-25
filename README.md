@@ -1,8 +1,9 @@
 ---
-title: Oliver G.W. Zen
+title: Oli Z.
+description: Keep breathing!
 ---
 
-## [Weblog](https://oliz.io/blog/)
+## [Blog](https://oliz.io/blog/)
 
 ## Projects
 
@@ -11,9 +12,7 @@ title: Oliver G.W. Zen
 * [txt2sprite](https://github.com/ooz/txt2sprite)
 * [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=32&regularHoursPerWeek=77&hourlyNet=18.10&angus)
 
-## Creative
-
-Global Game Jams:
+## Global Game Jams
 
 [![NetMons, three screenshots](static/netmons_screens.png)](https://netmons.net)
 
@@ -23,17 +22,12 @@ Global Game Jams:
 * [home is](https://oliz.io/home-is/) (2019)
 * [Handshake](https://oliz.io/handshake/) (2018)
 
-Modern Art:
+## Other Creative Works
 
-* [Noise Generator for Eye Doctors](https://github.com/ooz/art/tree/master/noise-generator)
-
-Other:
+[![Lego Designs](static/mocs.png)](https://oliz.io/mocs/)
 
 * [Axioms for Humans](https://oliz.io/axioms/) (writing in progress)
 * [Soul Drainers](https://oliz.io/art/soul-drainers/) (Warning: high resolution photos!)
-* [Lego Designs](https://oliz.io/mocs/)
-* ["Music"](https://github.com/ooz/art/tree/master/music)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
-
 
