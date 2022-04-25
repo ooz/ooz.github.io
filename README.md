@@ -1,5 +1,5 @@
 ---
-title: Oliver G.W. Zscheyge
+title: Oliver G.W. Zen
 ---
 
 ## [Weblog](https://oliz.io/blog/)
