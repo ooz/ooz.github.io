@@ -1,5 +1,5 @@
 ---
-title: Oliver G.W. Zeit
+title: Oliver G.W. Zscheyge
 ---
 
 ## [Weblog](https://oliz.io/blog/)
