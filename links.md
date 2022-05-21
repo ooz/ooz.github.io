@@ -15,5 +15,6 @@ Curated, unsorted list of good stuff on the independent internet:
 |[Low-tech Magazine](https://solar.lowtechmagazine.com/)|Alternative view on some technical, engineering problems (e.g. wind turbines, solar panels and hot water bottles!)|
 |[araw.xyz](https://araw.xyz/)|Various musings, indienet advocate, travel reports, repairs and sustainability|
 |[faehnri.ch](https://faehnri.ch/)|Dev topics, indie making|
+|[weicker.info](https://weicker.info/filme/)|(German) movie reviews by a computer science professor|
 |[ohsat.com](https://www.ohsat.com/)|Indie, retro game dev, great tutorials|
 
