@@ -12,6 +12,10 @@ description: Keep breathing!
 * [txt2sprite](https://github.com/ooz/txt2sprite)
 * [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=32&regularHoursPerWeek=77&hourlyNet=18.10&angus)
 
+## Games
+
+* [BotMos: Tr@ces](https://botmos.org/traces/)
+
 ## Global Game Jams
 
 [![NetMons, three screenshots](static/netmons_screens.png)](https://netmons.net)
