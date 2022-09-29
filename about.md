@@ -13,6 +13,10 @@ Where else to find me:
 
 * https://github.com/ooz
 
+If you like the content, you can buy me caffeinated drinks at:
+
+* https://ko-fi.com/oozoo
+
 ### What's the deal with the logo/avatar?
 
 It's a modified version of the [German Naturschutzgebiet (nature reserve) sign](https://en.wikipedia.org/wiki/Naturschutzgebiet).
