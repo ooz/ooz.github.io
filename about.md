@@ -8,14 +8,12 @@ When not sitting in front of computers, I like doing various sports (Shotokan Ka
 This site and blog grow continuously, so it may happen that old things get updated/changed.
 [Blog updates can be subscribed to via RSS](https://oliz.io/blog/rss.xml).
 If you want to give feedback or comment on one of my posts, feel free to write me an email (see **Imprint** below).
+Likewise, if you like the content and want to support me, [
+I run on caffeinated drinks](https://ko-fi.com/oozoo).
 
 Where else to find me:
 
 * https://github.com/ooz
-
-If you like the content, you can buy me caffeinated drinks at:
-
-* https://ko-fi.com/oozoo
 
 ### What's the deal with the logo/avatar?
 
