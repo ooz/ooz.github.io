@@ -27,7 +27,6 @@ description: Keep breathing!
 
 [![Lego Designs](static/mocs.png)](https://oliz.io/mocs/)
 
-* [Axioms for Humans](https://oliz.io/axioms/) (writing in progress)
 * [Soul Drainers](https://oliz.io/art/soul-drainers/) (Warning: high resolution photos!)
 
 [![Bauhaus Creatures](static/13x1x1552518380_alpha.png)](https://github.com/ooz/art/tree/master/bauhaus_creatures)
