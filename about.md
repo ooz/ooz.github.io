@@ -3,7 +3,7 @@ title: About
 ---
 
 Hey, I'm Oliver, a Software Engineer and Computer Scientist (M.Sc.) living in Germany. Nice to have you as a reader!
-When not sitting in front of computers, I like doing various sports (Shotokan Karate, BWE, Yoga, running etc.) and messing around with Lego bricks.
+When not sitting in front of computers, I like doing various sports (Shotokan Karate, calisthenics, running etc.) and messing around with Lego bricks.
 
 This site and blog grow continuously, so it may happen that old things get updated/changed.
 [Blog updates can be subscribed to via RSS](https://oliz.io/blog/rss.xml).
