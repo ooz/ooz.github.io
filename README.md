@@ -1,16 +1,15 @@
 ---
 title: Oli Z.
-description: Keep breathing!
 ---
 
 ## [Blog](https://oliz.io/blog/)
 
-## Projects
+## Personal Projects
 
-* [Zeitgeist](https://oliz.io/zeitgeist/), [Investments](https://oliz.io/zeitgeist/investments.html), [Weather](https://oliz.io/zeitgeist/weather.html)
-* [Good Generator](https://oliz.io/ggpy/)
-* [txt2sprite](https://github.com/ooz/txt2sprite)
-* [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=32&regularHoursPerWeek=77&hourlyNet=18.10&angus)
+* [Zeitgeist](https://oliz.io/zeitgeist/), [Investments](https://oliz.io/zeitgeist/investments.html), [Weather](https://oliz.io/zeitgeist/weather.html) *news aggregator*
+* [Good Generator](https://oliz.io/ggpy/) *static site generator*
+* [txt2sprite](https://github.com/ooz/txt2sprite) *text to image generator*
+* [Lifetime Clock](https://oliz.io/lifetime-clock/?headline=Olli%27s%20Zeit&workingHoursPerWeek=32&regularHoursPerWeek=77&hourlyNet=18.10&angus) *countdown to end of life*
 
 ## Games and Global Game Jams
 
