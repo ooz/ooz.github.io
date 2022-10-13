@@ -11,10 +11,6 @@ If you want to give feedback or comment on one of my posts, feel free to write m
 Likewise, if you like the content and want to support me, [
 I run on caffeinated drinks](https://ko-fi.com/oozoo).
 
-Where else to find me:
-
-* https://github.com/ooz
-
 ### What's the deal with the logo/avatar?
 
 It's a modified version of the [German Naturschutzgebiet (nature reserve) sign](https://en.wikipedia.org/wiki/Naturschutzgebiet).
