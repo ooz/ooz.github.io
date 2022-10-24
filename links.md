@@ -17,4 +17,5 @@ Curated, unsorted list of good stuff on the independent internet:
 |[faehnri.ch](https://faehnri.ch/)|Dev topics, indie making|
 |[weicker.info](https://weicker.info/filme/)|(German) movie reviews by a computer science professor|
 |[ohsat.com](https://www.ohsat.com/)|Indie, retro game dev, great tutorials|
+|[Jeremy Rose](https://www.nornagon.net/)|Programmer, indie game dev|
 
