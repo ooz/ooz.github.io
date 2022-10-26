@@ -27,7 +27,7 @@ install_pipenv: ## Install pipenv for initial setup or CI
 
 init: ## Initial setup of pipenv
 	pipenv --python 3
-	pipenv install
+	pipenv install --skip-lock
 
 test: clean_coverage ## Run ggpy tests, coverage and lint (only typecheck for now)
 	pipenv install --dev
