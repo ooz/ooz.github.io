@@ -15,6 +15,7 @@ title: Oli Z.
 
 [![NetMons, three screenshots](static/netmons_screens.png)](https://netmons.net)
 
+* [Dragon Tooth Fairy](https://oliz.io/tooth-fairy/) (2023)
 * [BotMos: Tr@ces](https://botmos.org/traces/) (2022)
 * [NetMons](https://netmons.net) (2022)
 * [Pompous Presentation Karaoke Generator](https://github.com/ooz/ppkg) (2021)
