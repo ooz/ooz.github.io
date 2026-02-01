@@ -15,6 +15,7 @@ title: Oli Z.
 
 [![NetMons, three screenshots](static/netmons_screens.png)](https://netmons.net)
 
+* [Flavor of the Month (FotM)](https://github.com/ooz/fotm) (2026)
 * [Underwater Zoo Race](https://github.com/Srile/ggj-2025) (2025)
 * [Ogre Doctor](https://github.com/ooz/ogre-doctor) (2024)
 * [Dragon Tooth Fairy](https://oliz.io/tooth-fairy/) (2023)
