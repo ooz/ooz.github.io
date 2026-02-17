@@ -57,7 +57,7 @@ by Oliver Z. is licensed under:
 All code snippets from the content directly under `./` and recursively under `blog/` (EXCEPT any `*/ext_img/*` resource/directory) are licensed under the MIT License:
 
 ```
-Copyright (c) 2016-2022 Oliver Z.
+Copyright (c) 2016-2026 Oliver Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
