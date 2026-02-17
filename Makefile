@@ -38,7 +38,7 @@ test: clean_coverage ## Run ggpy tests, coverage and lint (only typecheck for no
 
 deploy: all ## Build and publish by CI
 	git add .
-	git commit -m "Build by CircleCI `date` [skip ci]" || true
+	git commit -m "Build by GitHub Actions `date` [skip ci]" || true
 	git push
 
 # Cleanup
