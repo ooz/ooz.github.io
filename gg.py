@@ -1,4 +1,12 @@
-#!/usr/bin/env python
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "gitpython>=3.1.46",
+#     "markdown>=3.10.2",
+#     "pymdown-extensions>=10.21",
+# ]
+# ///
+
 # -*- coding: utf-8 -*-
 '''
 Author: Oliver Z., https://oliz.io
@@ -182,7 +190,7 @@ def _social_link(label:str, link:str) -> str:
 def posts_index(posts:List[dict]) -> str:
     posts = [post for post in posts if TAG_DRAFT not in post['tags'] and TAG_INDEX not in post['tags']]
     posts_html = []
-    for post in reversed(sorted(posts, key=lambda post: post['date'])): # type: ignore # mypy struggles to infer type for lambda here
+    for post in reversed(sorted(posts, key=lambda post: post['date'])):
         day = post['date'][:10]
         title = post['title']
         url = post['url']
@@ -466,7 +474,7 @@ def template_sitemap(posts:List[dict], config:Optional[dict]=None) -> str:
     additional_entries = config.get('site', {}).get('additional_sitemap_entries', [])
     all_entries = [(post['url'], post['last_modified']) for post in posts]
     all_entries = all_entries + [(entry, '') for entry in additional_entries]
-    all_entries = sorted(all_entries, key=lambda entry: entry[0]) # type: ignore # mypy fails to infer lambda type
+    all_entries = sorted(all_entries, key=lambda entry: entry[0])
     for entry in all_entries[:50000]:
         sitemap_xml.append('  <url>')
         sitemap_xml.append('    <loc>%s</loc>' % escape(entry[0]))
@@ -479,7 +487,7 @@ def template_sitemap(posts:List[dict], config:Optional[dict]=None) -> str:
 def template_rss(posts:List[dict], config:Optional[dict]=None) -> str:
     config = config or {}
     posts = [post for post in posts if TAG_DRAFT not in post.get('tags', []) and TAG_INDEX not in post.get('tags', [])]
-    posts = sorted(posts, key=lambda post: post['last_modified']) # type: ignore # mypy fails to infer lambda type
+    posts = sorted(posts, key=lambda post: post['last_modified'])
     base_url = xmlescape(config.get('site', {}).get('base_url', ''))
     title = xmlescape(config.get('site', {}).get('title', ''))
     title = base_url if (title == '' and base_url != '') else title
