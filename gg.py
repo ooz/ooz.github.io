@@ -1,9 +1,9 @@
 # /// script
 # requires-python = ">=3.14"
 # dependencies = [
-#     "gitpython>=3.1.46",
+#     "gitpython>=3.1.50",
 #     "markdown>=3.10.2",
-#     "pymdown-extensions>=10.21",
+#     "pymdown-extensions>=10.21.3",
 # ]
 # ///
 
@@ -12,7 +12,7 @@
 Author: Oliver Z., https://oliz.io
 Description: Minimal static site generator easy to use with GitHub Pages o.s.
 Website: https://oliz.io/ggpy/
-Version: 3.1.1
+Version: 3.1.2
 License: Dual-licensed under GNU AGPLv3 or MIT License,
          see LICENSE.txt file for details.
 
